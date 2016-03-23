@@ -14,12 +14,21 @@ $hooks = Hooks::get();
 
 <!-- JS -->
 <?php
-Assets::js([
+
+$jsArray = [
     Url::templatePath().'js/jquery.js',
     Url::templatePath().'js/app.js',
     Url::templatePath().'js/bootstrap-datepicker.min.js',
     '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js',
-]);
+];
+
+if (isset($data['javascript'])){
+    foreach ($data['javascript'] as &$jsFile) {
+        $jsArray[] = Url::templatePath() . "js/" . $jsFile . ".js";
+    }
+}
+
+Assets::js($jsArray);
 
 //hook for plugging in javascript
 $hooks->run('js');

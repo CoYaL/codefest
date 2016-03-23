@@ -32,6 +32,7 @@ Router::any('users', 'Controllers\User@index');
 Router::post('users/add', 'Controllers\User@add');
 Router::post('users/edit', 'Controllers\User@edit');
 Router::post('users/delete', 'Controllers\User@delete');
+Router::any('users/getusers', 'Controllers\User@getUsers');
 
 /* Management */
 Router::any('management', 'Controllers\Management@index');

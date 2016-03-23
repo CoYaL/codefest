@@ -9,7 +9,7 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        Gebruikers Overzicht
+        <i class="fa fa-users"></i>&nbsp;Gebruikers Overzicht
         <a class="btn btn-primary btn-sm pull-right">
             <i class="fa fa-plus"></i>
         </a>
@@ -30,25 +30,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Jamey van Heel</td>
-                <td>j.heel@gmail.com</td>
-                <td>15-06-1990</td>
-                <td>Super Admin</td>
-                <td>1.00</td>
-                <td>Administration</td>
-                <td>Active</td>
-                <td>
-                    <a class="btn btn-warning btn-sm">
-                        <i class="fa fa-list"></i>
-                    </a>
-                </td>
-                <td>
-                    <a class="btn btn-danger btn-sm">
-                        <i class="fa fa-trash"></i>
-                    </a>
-                </td>
-            </tr>
+
         </tbody>
     </table>
     <div class="panel-footer">
@@ -62,3 +44,82 @@
 
     </div>
 </div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="add_edit_modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <form >
+                    <div class="form-group">
+                        <label for="firstname">Voornaam</label>
+                        <input type="text" class="form-control" name="firstname">
+                    </div>
+                    <div class="form-group">
+                        <label for="start_date">Tussenvoegsel</label>
+                        <input type="text" class="form-control" name="middlename">
+                    </div>
+                    <div class="form-group">
+                        <label for="start_date">Achternaam</label>
+                        <input type="text" class="form-control" name="start_date">
+                    </div>
+                    <div class="form-group">
+                        <label for="start_date">Email</label>
+                        <input type="email" class="form-control" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="start_date">Geboortedatum</label>
+                        <input type="text" class="form-control datepicker" name="birthdate">
+                    </div>
+                    <div class="form-group">
+                        <label for="start_date">Rol</label>
+                        <select type="text" class="form-control" name="role"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="start_date">Factor</label>
+                        <input type="text" class="form-control" name="factor">
+                    </div>
+                    <div class="form-group">
+                        <label for="start_date">Department</label>
+                        <select class="form-control" name="department"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="start_date">Status</label>
+                        <select class="form-control" name="state"></select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-type>Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="template/text" id="template-user-record">
+    <tr>
+        <td>{{NAME}}</td>
+        <td>{{EMAIL}}</td>
+        <td>{{BIRTHDATE}}</td>
+        <td>{{ROLE}}</td>
+        <td>{{FACTOR}}</td>
+        <td>{{DEPARTMENT}}</td>
+        <td>{{STATE}}</td>
+        <td>
+            <button class="btn btn-warning btn-sm" data-id="{{ID}}" data-record>
+                <i class="fa fa-list"></i>
+            </button>
+        </td>
+        <td>
+            <button class="btn btn-danger btn-sm" data-id="{{ID}}" id="delete_user">
+                <i class="fa fa-trash"></i>
+            </button>
+        </td>
+    </tr>
+</script>
+
+

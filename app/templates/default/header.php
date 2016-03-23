@@ -58,6 +58,7 @@ $hooks->run('afterBody');
                     <li><a href="/leave">Verlof</a></li>
                     <li><a href="/hours/registration">Uren</a></li>
                     <li><a href="/hours/overview">Overzicht</a></li>
+                    <li><a href="/users">Gebruikers</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/authentication/logout">Uitloggen</a></li>
