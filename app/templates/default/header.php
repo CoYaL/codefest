@@ -26,6 +26,7 @@ $hooks = Hooks::get();
     Assets::css([
         '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css',
         Url::templatePath().'css/style.css',
+        Url::templatePath().'css/bootstrap-datepicker.min.css',
     ]);
 
     //hook for plugging in css
@@ -55,7 +56,7 @@ $hooks->run('afterBody');
             <div class="container">
                 <ul class="nav navbar-nav">
                     <li><a href="/leave/sick">Ziek</a></li>
-                    <li><a href="/leave/holiday">Vacantie</a></li>
+                    <li><a href="/leave/holiday">Vakantie</a></li>
                     <li><a href="/hours/registration">Uren</a></li>
                     <li><a href="/hours/overview">Overzicht</a></li>
                 </ul>

@@ -15,7 +15,7 @@ use Helpers\Hooks;
 /* Define routes. */
 /* Leave */
 Router::any('leave/sick', 'Controllers\Leave@sick');
-Router::any('leave/vacation', 'Controllers\Leave@vacation');
+Router::any('leave/holiday', 'Controllers\Leave@holiday');
 /* Authentication */
 Router::any('', 'Controllers\Authentication@index');
 Router::post('authentication/login', 'Controllers\Authentication@login');

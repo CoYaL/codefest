@@ -16,6 +16,8 @@ $hooks = Hooks::get();
 <?php
 Assets::js([
     Url::templatePath().'js/jquery.js',
+    Url::templatePath().'js/app.js',
+    Url::templatePath().'js/bootstrap-datepicker.min.js',
     '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js',
 ]);
 
