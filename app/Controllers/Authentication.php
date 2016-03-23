@@ -16,7 +16,7 @@ use Helpers\Session;
 
 class Authentication extends Controller
 {
-		private $model;
+    private $model;
 
 	public function __construct()
 	{
@@ -30,11 +30,10 @@ class Authentication extends Controller
 	 */
 	public function index($error = null)
 	{
-		$data['error'] = $error;
 		$data['title'] = 'Login';
 
 		View::renderTemplate('header', $data);
-		View::render('authentication/index', $data);
+		View::render('authentication/index', $data, $error);
 		View::renderTemplate('footer', $data);
 	}
 
