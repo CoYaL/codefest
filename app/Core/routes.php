@@ -26,6 +26,10 @@ Router::any('hours', 'Controllers\Hours@index');
 Router::any('hours/registration', 'Controllers\Hours@registration');
 Router::any('hours/overview', 'Controllers\Hours@overview');
 
+/* Management */
+Router::any('management', 'Controllers\Management@index');
+Router::any('management/leaveRequests', 'Controllers\Management@leaveRequests');
+
 
 /* Module routes. */
 $hooks = Hooks::get();
