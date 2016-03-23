@@ -26,9 +26,11 @@ class Authentication extends Controller
 
 	/**
 	 * Define Index page title and load template files.
+	 * @param mixed $error
 	 */
-	public function index()
+	public function index($error = null)
 	{
+		$data['error'] = $error;
 		$data['title'] = 'Login';
 
 		View::renderTemplate('header', $data);
@@ -42,7 +44,6 @@ class Authentication extends Controller
         if(Session::get('loggedin')){
             Url::redirect();
         }
-
         //check if submit button contains POST data
         if(isset($_POST['submit'])){
             $username = $_POST['username'];
@@ -52,7 +53,6 @@ class Authentication extends Controller
             if(Password::verify($password, $this->model->getHash($username)) == false){
                 $error[] = 'Gebruikersnaam of wachtwoord incorrect.';
             }
-
             //if validation has passed carry on
             if(!$error){
                 Session::set('loggedin',true);
@@ -61,13 +61,8 @@ class Authentication extends Controller
                 url::redirect('leave');
             }
             else{
-                return $error;
+                $this->index($error);
             }
-        }
-
-        //redirect user if already loggedin
-        if(Session::get('loggedin')){
-            Url::redirect();
         }
 
 	}
