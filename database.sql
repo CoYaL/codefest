@@ -244,7 +244,7 @@ DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
 
 --
---dumping data for project_occupation
+-- dumping data for project_occupation
 --
 INSERT INTO `project_occupation` (`project_id`, `helpdesk`, `commercial`, `administration`, `management`) VALUES ('1', '1', '0.5', '0.00', '1.25');
 INSERT INTO `project_occupation` (`project_id`, `helpdesk`, `commercial`, `administration`, `management`) VALUES ('2', '0.75', '0.25', '2.00', '0.33');
