@@ -28,13 +28,10 @@ class Users extends Model
         $query = sprintf("
             SELECT u.*,
               r.*,
-              e.*,
               (SELECT COUNT(*)) as maxRows
             FROM users as u
             JOIN roles as r
               ON u.role_id = r.role_id
-            JOIN employees as e
-              ON u.user_id = e.user_id
               %s", $limit);
         $data = $this->db->select($query);
 

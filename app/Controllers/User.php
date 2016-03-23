@@ -36,29 +36,52 @@ class User extends Controller
 
     public function add()
     {
-        $username = null;
-        $password = null;
-        $firstname = null;
-        $middlename = null;
-        $lastname = null;
-        $email = null;
-        $dateOfBirth = null;
+        $date = date_create_from_format('d-m-Y', $_POST['date_of_birth']);
+        $username = $_POST['username'];
+        $firstname = $_POST['firstname'];
+        $middlename = $_POST['middlename'];
+        $lastname = $_POST['lastname'];
+        $email = $_POST['email'];
+        $dateOfBirth = $date->format("Y-m-d");
+        $role = $_POST['role'];
 
         $user = [
-            'username'=>$username,
-            'password'=>$password,
-            'firstname'=>$firstname,
-            'middlename'=>$middlename,
-            'lastname'=>$lastname,
-            'email'=>$email,
-            'date_of_birth'=>$dateOfBirth,
-
+            'username' => $username,
+            'firstname' => $firstname,
+            'middlename' => $middlename,
+            'lastname' => $lastname,
+            'email' => $email,
+            'date_of_birth' => $dateOfBirth,
+            'role_id' => $role,
         ];
-        $this->model->create($user);
+        $_POST['user_id'] = $this->model->create($user);
+
+        print json_encode($_POST);
     }
 
     public function edit()
     {
+        $date = date_create_from_format('d-m-Y', $_POST['date_of_birth']);
+        $username = $_POST['username'];
+        $firstname = $_POST['firstname'];
+        $middlename = $_POST['middlename'];
+        $lastname = $_POST['lastname'];
+        $email = $_POST['email'];
+        $dateOfBirth = $date->format("Y-m-d");
+        $role = $_POST['role'];
+
+        $user = [
+            'username' => $username,
+            'firstname' => $firstname,
+            'middlename' => $middlename,
+            'lastname' => $lastname,
+            'email' => $email,
+            'date_of_birth' => $dateOfBirth,
+            'role_id' => $role,
+        ];
+        $_POST['user_id'] = $this->model->update($user);
+
+        print json_encode($_POST);
     }
 
     public function delete()
@@ -68,6 +91,13 @@ class User extends Controller
     public function getUsers()
     {
         $data = $this->model->getUsers();
+
+        print json_encode($data);
+    }
+
+    public function getRoles()
+    {
+        $data = $this->model->getRoles();
 
         print json_encode($data);
     }

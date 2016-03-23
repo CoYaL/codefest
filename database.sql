@@ -121,6 +121,12 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
 
+--
+-- dumping data for projects
+--
+INSERT INTO `projects` (`project_id`, `name`, `start_date`, `end_date`) VALUES (NULL, 'proj_num_one', '2016-03-01 00:00:00', NULL);
+INSERT INTO `projects` (`project_id`, `name`, `start_date`, `end_date`) VALUES (NULL, 'proj_num_two', '2016-03-02 00:00:00', NULL);
+INSERT INTO `projects` (`project_id`, `name`, `start_date`, `end_date`) VALUES (NULL, 'proj_num_three', '2016-03-03 00:00:00', NULL);
 
 -- -----------------------------------------------------
 -- Table `codefest`.`employee_project`
@@ -168,7 +174,7 @@ DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
 
 -- -----------------------------------------------------
---Dumping data for table `global_settings`
+-- Dumping data for table `global_settings`
 -- -----------------------------------------------------
 
 INSERT INTO `global_settings` (`global_setting_id`, `fulltime_hours`, `year`, `vacation_days`, `vacation_threshold`) VALUES ('1', '40', '2016', '25', '5');
@@ -222,10 +228,10 @@ DROP TABLE IF EXISTS `codefest`.`project_occupation` ;
 
 CREATE TABLE IF NOT EXISTS `codefest`.`project_occupation` (
   `project_id` INT(11) NOT NULL AUTO_INCREMENT,
-  `helpdesk` INT(11) NOT NULL DEFAULT '0',
-  `commercial` INT(11) NOT NULL DEFAULT '0',
-  `administration` INT(11) NOT NULL DEFAULT '0',
-  `management` INT(11) NOT NULL DEFAULT '0',
+  `helpdesk` DECIMAL(5,2) NOT NULL DEFAULT '0',
+  `commercial` DECIMAL(5,2) NOT NULL DEFAULT '0',
+  `administration` DECIMAL(5,2) NOT NULL DEFAULT '0',
+  `management` DECIMAL(5,2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`project_id`),
   INDEX `fk_project_occupation_projects1_idx` (`project_id` ASC),
   CONSTRAINT `fk_project_id2`
@@ -236,6 +242,12 @@ CREATE TABLE IF NOT EXISTS `codefest`.`project_occupation` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
+
+--
+-- dumping data for project_occupation
+--
+INSERT INTO `project_occupation` (`project_id`, `helpdesk`, `commercial`, `administration`, `management`) VALUES ('1', '1', '0.5', '0.00', '1.25');
+INSERT INTO `project_occupation` (`project_id`, `helpdesk`, `commercial`, `administration`, `management`) VALUES ('2', '0.75', '0.25', '2.00', '0.33');
 
 
 -- -----------------------------------------------------
@@ -260,6 +272,9 @@ CREATE TABLE IF NOT EXISTS `codefest`.`vacation_days` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
+
+INSERT INTO `users` (`user_id`, `role_id`, `username`, `password`, `firstname`, `middlename`, `lastname`, `email`, `date_of_birth`) VALUES
+(1, 1, 'jameyheel', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'Jamey', 'van', 'Heel', 'jamey.heel@gmail.com', '1990-06-15');
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
