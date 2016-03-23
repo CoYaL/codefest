@@ -70,6 +70,18 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
 
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `role_id`, `username`, `password`, `firstname`, `middlename`, `lastname`, `email`, `date_of_birth`) VALUES
+  (1, 1, 'admin', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'admin', NULL, 'nimda', NULL, '2016-03-01'),
+  (2, 2, 'systeem', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'systeem', NULL, 'meetsys', NULL, '2016-03-01'),
+  (3, 3, 'medewerker', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'mede', NULL, 'werker1', NULL, '2016-03-01'),
+  (4, 4, 'administratie', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'admini', NULL, 'stratie', NULL, '2016-03-01'),
+  (5, 5, 'manager', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'mana', NULL, 'ger', NULL, '2016-03-01');
+
+
 
 -- -----------------------------------------------------
 -- Table `codefest`.`employees`
@@ -79,7 +91,6 @@ DROP TABLE IF EXISTS `codefest`.`employees` ;
 CREATE TABLE IF NOT EXISTS `codefest`.`employees` (
   `employee_id` INT(11) NOT NULL AUTO_INCREMENT,
   `user_id` INT(11) NOT NULL,
-  `leave_id` INT(11) NULL DEFAULT NULL,
   `factor` FLOAT(3,2) NOT NULL DEFAULT '1.00',
   `department` ENUM('helpdesk', 'commercieel', 'administratiefmedewerker', 'management') CHARACTER SET 'utf8' NOT NULL,
   `state` ENUM('actief', 'ziek', 'vakantie', 'inactief') CHARACTER SET 'utf8' NOT NULL,
