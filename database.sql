@@ -32,6 +32,18 @@ DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
 
 
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`role_id`, `role`) VALUES
+  (0, 'admin'),
+  (1, 'systeem'),
+  (2, 'medewerker'),
+  (3, 'administratiemedewerker'),
+  (4, 'manager');
+
+
 -- -----------------------------------------------------
 -- Table `codefest`.`users`
 -- -----------------------------------------------------
