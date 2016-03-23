@@ -51,7 +51,7 @@ class Config
         /*
          * Database host default is localhost.
          */
-        define('DB_HOST', 'db4free.net');
+        define('DB_HOST', 'localhost');
         /*
          * Database name.
          */
@@ -59,11 +59,11 @@ class Config
         /*
          * Database username.
          */
-        define('DB_USER', 'codefest_admin');
+        define('DB_USER', 'root');
         /*
          * Database password.
          */
-        define('DB_PASS', 'festcode');
+        define('DB_PASS', '');
         /*
          * PREFER to be used in database calls default is smvc_
          */
@@ -75,7 +75,7 @@ class Config
         /*
          * Optional create a constant for the name of the site.
          */
-        define('SITETITLE', 'Notice me Sin(&Pi;');
+        define('SITETITLE', 'Notice me Sin(&Pi;)');
         /*
          * Optional set a site email address.
          */
