@@ -15,7 +15,11 @@ use Helpers\Hooks;
 /* Define routes. */
 Router::any('subpage', 'Controllers\Welcome@subPage');
 Router::any('', 'Controllers\Authentication@index');
-Router::post('', 'Controllers\Authentication@login');
+Router::post('authentication/login', 'Controllers\Authentication@login');
+Router::any('authentication/logout', 'Controllers\Authentication@logout');
+Router::any('hours', 'Controllers\Hours@index');
+Router::any('hours/registration', 'Controllers\Hours@registration');
+Router::any('hours/overview', 'Controllers\Hours@overview');
 
 
 /* Module routes. */
