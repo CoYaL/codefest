@@ -231,4 +231,15 @@ class Database extends PDO
     {
         return $this->exec("TRUNCATE TABLE $table");
     }
+
+
+    public function getEnumValues($table, $field)
+    {
+        $data = $this->select("
+            SHOW COLUMNS
+            FROM $table
+            LIKE '$field'");
+        preg_match_all("/'([\w ]*)'/", $data[0]->Type, $values);
+        return $values[1];
+    }
 }
