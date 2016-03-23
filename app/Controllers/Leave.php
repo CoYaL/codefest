@@ -24,7 +24,6 @@ class Leave extends Controller
     public function __construct()
     {
         parent::__construct();
-        $this->language->load('Welcome');
     }
 
     public function index()

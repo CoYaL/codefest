@@ -32,6 +32,9 @@ class Hours extends Controller
 		View::renderTemplate('footer', $data);
 	}
 
+	/**
+	 * Define Registration page title and load template files.
+	 */
 	public function registration()
 	{
 		$data['title'] = 'Uren Registratie';
@@ -49,6 +52,9 @@ class Hours extends Controller
 
 	}
 
+	/**
+	 * Define Overview page title and load template files.
+	 */
 	public function overview()
 	{
 		$data['title'] = 'Uren Overzicht';

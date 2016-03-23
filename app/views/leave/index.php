@@ -11,7 +11,7 @@
         <?php echo $data['title'] ?>
     </div>
     <div class="panel-body">
-        <form class="col-md-6">
+        <form class="col-md-6" method="POST">
             <label class="radio-inline">
                 <input type="radio" name="leave_type" id="leave_type" value="sick" required> Ziek
             </label>
