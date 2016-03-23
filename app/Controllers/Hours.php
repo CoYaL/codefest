@@ -11,13 +11,16 @@ namespace Controllers;
 
 use Core\Controller;
 use Core\View;
+use Helpers\Session;
 use Helpers\Url;
 
 class Hours extends Controller
 {
+	private $model;
 	public function __construct()
 	{
 		parent::__construct();
+		$this->model = new \Models\Hours();
 	}
 
 	/**
@@ -37,14 +40,17 @@ class Hours extends Controller
 	 */
 	public function registration()
 	{
+		//cast to userid to int
+		$userID = intval(Session::get('userID'));
+
+		$userProjects = $this->model->getUserProjects($userID);
+
+		foreach ($userProjects as $project) {
+			$data['projects'][] = ['id' => $project->project_id, 'name' => $project->name];
+		}
+
 		$data['title'] = 'Uren Registratie';
 		$data['employeeName'] = 'Beau ter Ham';
-		$data['projects'] = [
-			['id' => 1, 'description' => 'Je moeder is een kuthoer'],
-			['id' => 2, 'description' => 'Je vader is een kuthoer'],
-			['id' => 3, 'description' => 'Je oma is een slet'],
-		];
-
 
 		View::renderTemplate('header', $data);
 		View::render('hours/registration', $data);

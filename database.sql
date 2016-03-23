@@ -70,6 +70,18 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
 
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `role_id`, `username`, `password`, `firstname`, `middlename`, `lastname`, `email`, `date_of_birth`) VALUES
+  (1, 1, 'admin', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'admin', NULL, 'nimda', NULL, '2016-03-01'),
+  (2, 2, 'systeem', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'systeem', NULL, 'meetsys', NULL, '2016-03-01'),
+  (3, 3, 'medewerker', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'mede', NULL, 'werker1', NULL, '2016-03-01'),
+  (4, 4, 'administratie', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'admini', NULL, 'stratie', NULL, '2016-03-01'),
+  (5, 5, 'manager', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'mana', NULL, 'ger', NULL, '2016-03-01');
+
+
 
 -- -----------------------------------------------------
 -- Table `codefest`.`employees`
@@ -79,7 +91,6 @@ DROP TABLE IF EXISTS `codefest`.`employees` ;
 CREATE TABLE IF NOT EXISTS `codefest`.`employees` (
   `employee_id` INT(11) NOT NULL AUTO_INCREMENT,
   `user_id` INT(11) NOT NULL,
-  `leave_id` INT(11) NULL DEFAULT NULL,
   `factor` FLOAT(3,2) NOT NULL DEFAULT '1.00',
   `department` ENUM('helpdesk', 'commercieel', 'administratiefmedewerker', 'management') CHARACTER SET 'utf8' NOT NULL,
   `state` ENUM('actief', 'ziek', 'vakantie', 'inactief') CHARACTER SET 'utf8' NOT NULL,
@@ -102,13 +113,20 @@ DROP TABLE IF EXISTS `codefest`.`projects` ;
 
 CREATE TABLE IF NOT EXISTS `codefest`.`projects` (
   `project_id` INT(11) NOT NULL AUTO_INCREMENT,
-  `start_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `name` VARCHAR(255) CHARACTER SET 'utf8' NULL DEFAULT NULL,
+  `start_date` TIMESTAMP NULL DEFAULT NULL,
   `end_date` TIMESTAMP NULL DEFAULT NULL,
   PRIMARY KEY (`project_id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
 
+--
+-- dumping data for projects
+--
+INSERT INTO `projects` (`project_id`, `name`, `start_date`, `end_date`) VALUES (NULL, 'proj_num_one', '2016-03-01 00:00:00', NULL);
+INSERT INTO `projects` (`project_id`, `name`, `start_date`, `end_date`) VALUES (NULL, 'proj_num_two', '2016-03-02 00:00:00', NULL);
+INSERT INTO `projects` (`project_id`, `name`, `start_date`, `end_date`) VALUES (NULL, 'proj_num_three', '2016-03-03 00:00:00', NULL);
 
 -- -----------------------------------------------------
 -- Table `codefest`.`employee_project`
@@ -148,13 +166,19 @@ CREATE TABLE IF NOT EXISTS `codefest`.`global_settings` (
   `global_setting_id` INT(11) NOT NULL AUTO_INCREMENT,
   `fulltime_hours` INT(11) NOT NULL,
   `year` YEAR NOT NULL,
-  `vacation_days` FLOAT(3,2) NOT NULL,
-  `vacation_threshold` FLOAT(3,2) NOT NULL,
+  `vacation_days` DECIMAL(5,2) NOT NULL,
+  `vacation_threshold` DECIMAL(5,2) NOT NULL,
   PRIMARY KEY (`global_setting_id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
 
+-- -----------------------------------------------------
+--Dumping data for table `global_settings`
+-- -----------------------------------------------------
+
+INSERT INTO `global_settings` (`global_setting_id`, `fulltime_hours`, `year`, `vacation_days`, `vacation_threshold`) VALUES ('1', '40', '2016', '25', '5');
+INSERT INTO `global_settings` (`global_setting_id`, `fulltime_hours`, `year`, `vacation_days`, `vacation_threshold`) VALUES ('2', '38', '2017', '27', '7');
 
 -- -----------------------------------------------------
 -- Table `codefest`.`holidays`
@@ -163,7 +187,7 @@ DROP TABLE IF EXISTS `codefest`.`holidays` ;
 
 CREATE TABLE IF NOT EXISTS `codefest`.`holidays` (
   `holiday_id` INT(11) NOT NULL AUTO_INCREMENT,
-  `start_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `start_date` TIMESTAMP NULL DEFAULT NULL,
   `end_date` TIMESTAMP NULL DEFAULT NULL,
   `description` VARCHAR(255) CHARACTER SET 'utf8' NULL DEFAULT NULL,
   `payment_multiplier` FLOAT(3,2) NOT NULL DEFAULT '1.00',
@@ -181,7 +205,7 @@ DROP TABLE IF EXISTS `codefest`.`leave` ;
 CREATE TABLE IF NOT EXISTS `codefest`.`leave` (
   `leave_id` INT(11) NOT NULL AUTO_INCREMENT,
   `employee_id` INT(11) NOT NULL,
-  `start_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `start_date` TIMESTAMP NULL DEFAULT NULL,
   `end_date` TIMESTAMP NULL DEFAULT NULL,
   `reason` ENUM('sick', 'vacation', 'other') CHARACTER SET 'utf8' NOT NULL DEFAULT 'other',
   `state` ENUM('accepted', 'denied', 'in review') CHARACTER SET 'utf8' NOT NULL DEFAULT 'in review',
@@ -204,10 +228,10 @@ DROP TABLE IF EXISTS `codefest`.`project_occupation` ;
 
 CREATE TABLE IF NOT EXISTS `codefest`.`project_occupation` (
   `project_id` INT(11) NOT NULL AUTO_INCREMENT,
-  `helpdesk` INT(11) NOT NULL DEFAULT '0',
-  `commercial` INT(11) NOT NULL DEFAULT '0',
-  `administration` INT(11) NOT NULL DEFAULT '0',
-  `management` INT(11) NOT NULL DEFAULT '0',
+  `helpdesk` DECIMAL(5,2) NOT NULL DEFAULT '0',
+  `commercial` DECIMAL(5,2) NOT NULL DEFAULT '0',
+  `administration` DECIMAL(5,2) NOT NULL DEFAULT '0',
+  `management` DECIMAL(5,2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`project_id`),
   INDEX `fk_project_occupation_projects1_idx` (`project_id` ASC),
   CONSTRAINT `fk_project_id2`
@@ -218,6 +242,12 @@ CREATE TABLE IF NOT EXISTS `codefest`.`project_occupation` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
+
+--
+--dumping data for project_occupation
+--
+INSERT INTO `project_occupation` (`project_id`, `helpdesk`, `commercial`, `administration`, `management`) VALUES ('1', '1', '0.5', '0.00', '1.25');
+INSERT INTO `project_occupation` (`project_id`, `helpdesk`, `commercial`, `administration`, `management`) VALUES ('2', '0.75', '0.25', '2.00', '0.33');
 
 
 -- -----------------------------------------------------

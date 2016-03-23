@@ -17,7 +17,7 @@
 			<div class="form-group col-md-6">
 					<label for="projects">Project</label><select class="form-control" name="project" id="projects">
 						<?php foreach($data['projects'] as $value){
-							printf('<option value="%s">%s</option>',$value["id"],$value["description"]);
+							printf('<option value="%s">%s</option>',$value["id"],$value["name"]);
 						}?>
 					</select>
 			</div>
