@@ -121,6 +121,12 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
 
+--
+-- dumping data for projects
+--
+INSERT INTO `projects` (`project_id`, `name`, `start_date`, `end_date`) VALUES (NULL, 'proj_num_one', '2016-03-01 00:00:00', NULL);
+INSERT INTO `projects` (`project_id`, `name`, `start_date`, `end_date`) VALUES (NULL, 'proj_num_two', '2016-03-02 00:00:00', NULL);
+INSERT INTO `projects` (`project_id`, `name`, `start_date`, `end_date`) VALUES (NULL, 'proj_num_three', '2016-03-03 00:00:00', NULL);
 
 -- -----------------------------------------------------
 -- Table `codefest`.`employee_project`
