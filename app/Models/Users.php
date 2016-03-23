@@ -31,11 +31,12 @@ class Users extends Model
               (SELECT COUNT(*)) as maxRows
             FROM users as u
             JOIN roles as r
-              ON users.role_id = r.role_id
+              ON u.role_id = r.role_id
             JOIN employees as e
-              ON users.user_id = e.user_id
-            '.$limit.'
-              ");
+              ON u.user_id = e.user_id
+            ".$limit
+        );
+
         return $data;
     }
 }

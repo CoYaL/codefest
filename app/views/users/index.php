@@ -10,7 +10,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <i class="fa fa-users"></i>&nbsp;Gebruikers Overzicht
-        <a class="btn btn-primary btn-sm pull-right">
+        <a class="btn btn-primary btn-sm pull-right" id="add_user">
             <i class="fa fa-plus"></i>
         </a>
         <div style="clear:both"></div>
@@ -64,7 +64,7 @@
                     </div>
                     <div class="form-group">
                         <label for="start_date">Achternaam</label>
-                        <input type="text" class="form-control" name="start_date">
+                        <input type="text" class="form-control" name="lastname">
                     </div>
                     <div class="form-group">
                         <label for="start_date">Email</label>
@@ -72,7 +72,7 @@
                     </div>
                     <div class="form-group">
                         <label for="start_date">Geboortedatum</label>
-                        <input type="text" class="form-control datepicker" name="birthdate">
+                        <input type="text" class="form-control datepicker" name="date_of_birth">
                     </div>
                     <div class="form-group">
                         <label for="start_date">Rol</label>
@@ -94,7 +94,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-type>Save changes</button>
+                <button type="button" class="btn btn-primary" data-type>Edit User</button>
             </div>
         </div>
     </div>

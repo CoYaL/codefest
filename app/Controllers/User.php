@@ -15,9 +15,13 @@ use Helpers\Hooks;
 
 class User extends Controller
 {
+    private $model;
+
     public function __construct()
     {
         parent::__construct();
+
+        $this->model = new \Models\Users();
     }
 
     public function index()
@@ -45,17 +49,7 @@ class User extends Controller
 
     public function getUsers()
     {
-        $data = [];
-        $data[] = [
-            'user_id' => '1',
-            'name' => 'Jamey van Heel',
-            'email' => 'test',
-            'birthdate' => '01-01-1900',
-            'role' => 'Admin',
-            'factor' => '1.00',
-            'department' => 'Administratie',
-            'state' => 'Actief',
-        ];
+        $data = $this->model->getUsers();
 
         print json_encode($data);
     }

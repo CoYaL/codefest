@@ -15,4 +15,178 @@
 <pre>#0 {main}</pre>
 
 <hr />
-<p>Error on Mar 23, 2016 13:59PM - require(C:\xampp\htdocs\codefest\app/views/leave/holiday.php): failed to open stream: No such file or directory in C:\xampp\htdocs\codefest\app\Core\View.php on line 34</p><p>Error on Mar 23, 2016 15:55PM - call_user_func_array() expects parameter 1 to be a valid callback, class 'Controllers\User' does not have a method 'index' in C:\xampp\htdocs\codefest\app\Core\Router.php on line 124</p><p>Error on Mar 23, 2016 15:56PM - require(C:\xampp\htdocs\codefest\app/views/user/add.php): failed to open stream: No such file or directory in C:\xampp\htdocs\codefest\app\Core\View.php on line 34</p>
+<p>Error on Mar 23, 2016 13:59PM - require(C:\xampp\htdocs\codefest\app/views/leave/holiday.php): failed to open stream: No such file or directory in C:\xampp\htdocs\codefest\app\Core\View.php on line 34</p><p>Error on Mar 23, 2016 15:55PM - call_user_func_array() expects parameter 1 to be a valid callback, class 'Controllers\User' does not have a method 'index' in C:\xampp\htdocs\codefest\app\Core\Router.php on line 124</p><p>Error on Mar 23, 2016 15:56PM - require(C:\xampp\htdocs\codefest\app/views/user/add.php): failed to open stream: No such file or directory in C:\xampp\htdocs\codefest\app\Core\View.php on line 34</p><h3>Exception information:</h3>
+
+           <p><strong>Date:</strong> Mar 23, 2016 19:41PM</p>
+
+           <p><strong>Message:</strong> SQLSTATE[HY000] [1049] Unknown database 'codefest'</p>
+
+           <p><strong>Code:</strong> 1049</p>
+
+           <p><strong>File:</strong> C:\xampp\htdocs\codefest\app\Helpers\Database.php</p>
+
+           <p><strong>Line:</strong> 62</p>
+
+           <h3>Stack trace:</h3>
+
+           <pre>#0 C:\xampp\htdocs\codefest\app\Helpers\Database.php(62): PDO->__construct('mysql:host=loca...', 'root', '')
+#1 C:\xampp\htdocs\codefest\app\Core\Model.php(33): Helpers\Database::get()
+#2 C:\xampp\htdocs\codefest\app\Models\Users.php(19): Core\Model->__construct()
+#3 C:\xampp\htdocs\codefest\app\Controllers\User.php(24): Models\Users->__construct()
+#4 C:\xampp\htdocs\codefest\app\Core\Router.php(122): Controllers\User->__construct(NULL)
+#5 C:\xampp\htdocs\codefest\app\Core\Router.php(249): Core\Router::invokeObject('Controllers\\Use...', Array)
+#6 C:\xampp\htdocs\codefest\app\Core\routes.php(53): Core\Router::dispatch()
+#7 C:\xampp\htdocs\codefest\index.php(80): require('C:\\xampp\\htdocs...')
+#8 {main}</pre>
+
+           <hr />
+<h3>Exception information:</h3>
+
+           <p><strong>Date:</strong> Mar 23, 2016 19:41PM</p>
+
+           <p><strong>Message:</strong> SQLSTATE[HY000] [1049] Unknown database 'codefest'</p>
+
+           <p><strong>Code:</strong> 1049</p>
+
+           <p><strong>File:</strong> C:\xampp\htdocs\codefest\app\Helpers\Database.php</p>
+
+           <p><strong>Line:</strong> 62</p>
+
+           <h3>Stack trace:</h3>
+
+           <pre>#0 C:\xampp\htdocs\codefest\app\Helpers\Database.php(62): PDO->__construct('mysql:host=loca...', 'root', '')
+#1 C:\xampp\htdocs\codefest\app\Core\Model.php(33): Helpers\Database::get()
+#2 C:\xampp\htdocs\codefest\app\Models\Users.php(19): Core\Model->__construct()
+#3 C:\xampp\htdocs\codefest\app\Controllers\User.php(25): Models\Users->__construct()
+#4 C:\xampp\htdocs\codefest\app\Core\Router.php(122): Controllers\User->__construct(NULL)
+#5 C:\xampp\htdocs\codefest\app\Core\Router.php(249): Core\Router::invokeObject('Controllers\\Use...', Array)
+#6 C:\xampp\htdocs\codefest\app\Core\routes.php(53): Core\Router::dispatch()
+#7 C:\xampp\htdocs\codefest\index.php(80): require('C:\\xampp\\htdocs...')
+#8 {main}</pre>
+
+           <hr />
+<h3>Exception information:</h3>
+
+           <p><strong>Date:</strong> Mar 23, 2016 19:44PM</p>
+
+           <p><strong>Message:</strong> SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''..'' at line 10</p>
+
+           <p><strong>Code:</strong> 42000</p>
+
+           <p><strong>File:</strong> C:\xampp\htdocs\codefest\app\Helpers\Database.php</p>
+
+           <p><strong>Line:</strong> 109</p>
+
+           <h3>Stack trace:</h3>
+
+           <pre>#0 C:\xampp\htdocs\codefest\app\Helpers\Database.php(109): PDOStatement->execute()
+#1 C:\xampp\htdocs\codefest\app\Models\Users.php(38): Helpers\Database->select('\r\n            S...')
+#2 C:\xampp\htdocs\codefest\app\Controllers\User.php(53): Models\Users->getUsers()
+#3 [internal function]: Controllers\User->getUsers()
+#4 C:\xampp\htdocs\codefest\app\Core\Router.php(124): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\codefest\app\Core\Router.php(249): Core\Router::invokeObject('Controllers\\Use...', Array)
+#6 C:\xampp\htdocs\codefest\app\Core\routes.php(53): Core\Router::dispatch()
+#7 C:\xampp\htdocs\codefest\index.php(80): require('C:\\xampp\\htdocs...')
+#8 {main}</pre>
+
+           <hr />
+<h3>Exception information:</h3>
+
+           <p><strong>Date:</strong> Mar 23, 2016 19:47PM</p>
+
+           <p><strong>Message:</strong> SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''..'' at line 10</p>
+
+           <p><strong>Code:</strong> 42000</p>
+
+           <p><strong>File:</strong> C:\xampp\htdocs\codefest\app\Helpers\Database.php</p>
+
+           <p><strong>Line:</strong> 109</p>
+
+           <h3>Stack trace:</h3>
+
+           <pre>#0 C:\xampp\htdocs\codefest\app\Helpers\Database.php(109): PDOStatement->execute()
+#1 C:\xampp\htdocs\codefest\app\Models\Users.php(38): Helpers\Database->select('\r\n            S...')
+#2 C:\xampp\htdocs\codefest\app\Controllers\User.php(53): Models\Users->getUsers()
+#3 [internal function]: Controllers\User->getUsers()
+#4 C:\xampp\htdocs\codefest\app\Core\Router.php(124): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\codefest\app\Core\Router.php(249): Core\Router::invokeObject('Controllers\\Use...', Array)
+#6 C:\xampp\htdocs\codefest\app\Core\routes.php(53): Core\Router::dispatch()
+#7 C:\xampp\htdocs\codefest\index.php(80): require('C:\\xampp\\htdocs...')
+#8 {main}</pre>
+
+           <hr />
+<h3>Exception information:</h3>
+
+           <p><strong>Date:</strong> Mar 23, 2016 19:47PM</p>
+
+           <p><strong>Message:</strong> SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''..'' at line 10</p>
+
+           <p><strong>Code:</strong> 42000</p>
+
+           <p><strong>File:</strong> C:\xampp\htdocs\codefest\app\Helpers\Database.php</p>
+
+           <p><strong>Line:</strong> 109</p>
+
+           <h3>Stack trace:</h3>
+
+           <pre>#0 C:\xampp\htdocs\codefest\app\Helpers\Database.php(109): PDOStatement->execute()
+#1 C:\xampp\htdocs\codefest\app\Models\Users.php(38): Helpers\Database->select('\r\n            S...')
+#2 C:\xampp\htdocs\codefest\app\Controllers\User.php(53): Models\Users->getUsers()
+#3 [internal function]: Controllers\User->getUsers()
+#4 C:\xampp\htdocs\codefest\app\Core\Router.php(124): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\codefest\app\Core\Router.php(249): Core\Router::invokeObject('Controllers\\Use...', Array)
+#6 C:\xampp\htdocs\codefest\app\Core\routes.php(53): Core\Router::dispatch()
+#7 C:\xampp\htdocs\codefest\index.php(80): require('C:\\xampp\\htdocs...')
+#8 {main}</pre>
+
+           <hr />
+<h3>Exception information:</h3>
+
+           <p><strong>Date:</strong> Mar 23, 2016 19:57PM</p>
+
+           <p><strong>Message:</strong> SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''..'' at line 10</p>
+
+           <p><strong>Code:</strong> 42000</p>
+
+           <p><strong>File:</strong> C:\xampp\htdocs\codefest\app\Helpers\Database.php</p>
+
+           <p><strong>Line:</strong> 109</p>
+
+           <h3>Stack trace:</h3>
+
+           <pre>#0 C:\xampp\htdocs\codefest\app\Helpers\Database.php(109): PDOStatement->execute()
+#1 C:\xampp\htdocs\codefest\app\Models\Users.php(38): Helpers\Database->select('\r\n            S...')
+#2 C:\xampp\htdocs\codefest\app\Controllers\User.php(53): Models\Users->getUsers()
+#3 [internal function]: Controllers\User->getUsers()
+#4 C:\xampp\htdocs\codefest\app\Core\Router.php(124): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\codefest\app\Core\Router.php(249): Core\Router::invokeObject('Controllers\\Use...', Array)
+#6 C:\xampp\htdocs\codefest\app\Core\routes.php(53): Core\Router::dispatch()
+#7 C:\xampp\htdocs\codefest\index.php(80): require('C:\\xampp\\htdocs...')
+#8 {main}</pre>
+
+           <hr />
+<h3>Exception information:</h3>
+
+           <p><strong>Date:</strong> Mar 23, 2016 19:58PM</p>
+
+           <p><strong>Message:</strong> SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''..'' at line 10</p>
+
+           <p><strong>Code:</strong> 42000</p>
+
+           <p><strong>File:</strong> C:\xampp\htdocs\codefest\app\Helpers\Database.php</p>
+
+           <p><strong>Line:</strong> 109</p>
+
+           <h3>Stack trace:</h3>
+
+           <pre>#0 C:\xampp\htdocs\codefest\app\Helpers\Database.php(109): PDOStatement->execute()
+#1 C:\xampp\htdocs\codefest\app\Models\Users.php(38): Helpers\Database->select('\r\n            S...')
+#2 C:\xampp\htdocs\codefest\app\Controllers\User.php(52): Models\Users->getUsers()
+#3 [internal function]: Controllers\User->getUsers()
+#4 C:\xampp\htdocs\codefest\app\Core\Router.php(124): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\codefest\app\Core\Router.php(249): Core\Router::invokeObject('Controllers\\Use...', Array)
+#6 C:\xampp\htdocs\codefest\app\Core\routes.php(53): Core\Router::dispatch()
+#7 C:\xampp\htdocs\codefest\index.php(80): require('C:\\xampp\\htdocs...')
+#8 {main}</pre>
+
+           <hr />
