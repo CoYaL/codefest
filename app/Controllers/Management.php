@@ -36,13 +36,13 @@ class Management extends Controller
 		$data['title'] = 'Verlof verzoeken';
 		$data['requests'] = [
 			['name' => 'Harry Potter', 'department' => 'commercial', 'reason' => 'sick',
-				'startDate' => '23/03/2016', 'endDate' => '30/03/2016', 'description' => ''],
+				'startDate' => '23/03/2016', 'endDate' => '30/03/2016', 'description' => '', 'status' => null],
 			['name' => 'Jamey van Heel', 'department' => 'helpdesk', 'reason' => 'vacation',
-				'startDate' => '23/03/2016', 'endDate' => '30/03/2016', 'description' => 'Kerst inhalen'],
+				'startDate' => '23/03/2016', 'endDate' => '30/03/2016', 'description' => 'Kerst inhalen', 'status' => 'denied'],
 			['name' => 'Conner Orth', 'department' => 'administration', 'reason' => 'vacation',
-				'startDate' => '23/03/2016', 'endDate' => '30/03/2016', 'description' => 'Oud en Nieuw'],
+				'startDate' => '23/03/2016', 'endDate' => '30/03/2016', 'description' => 'Oud en Nieuw', 'status' => 'accepted'],
 			['name' => 'Albus Perkamentus', 'department' => 'management', 'reason' => 'sick',
-				'startDate' => '23/03/2016', 'endDate' => '30/03/2016', 'description' => ''],
+				'startDate' => '23/03/2016', 'endDate' => '30/03/2016', 'description' => '', 'status' => null],
 		];
 
 		View::renderTemplate('header', $data);

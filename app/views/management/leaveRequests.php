@@ -18,6 +18,7 @@
 				<th>Van datum</th>
 				<th>Tot datum</th>
 				<th>Beschrijving</th>
+				<th>Status</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -29,8 +30,19 @@
 				<td>%s</td>
 				<td>%s</td>
 				<td>%s</td>
-				<td class="btn-group"><button class="btn btn-success">Accepteren</button><button class="btn btn-danger">Afwijzen</button></td>
-			</tr>',$request['name'],$request['department'],$request['reason'],$request['startDate'],$request['endDate'],$request['description']);
+				',$request['name'],$request['department'],$request['reason'],$request['startDate'],$request['endDate'],$request['description']);
+				switch($request['status']){
+					case 'accepted':
+						echo '<td class="success">Accepted</td>';
+						break;
+					case 'denied':
+						echo '<td class="danger">Denied</td>';
+						break;
+					default:
+						echo '<td class="btn-group"><button class="btn btn-success">Accepteren</button><button class="btn btn-danger">Afwijzen</button></td>
+			</tr>';
+						break;
+				}
 			}?>
 			</tbody>
 		</table>
