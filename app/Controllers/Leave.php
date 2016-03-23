@@ -29,29 +29,12 @@ class Leave extends Controller
 
     public function index()
     {
-        $data['title'] = $this->language->get('welcome_text');
-        $data['welcome_message'] = $this->language->get('welcome_message');
-
-        View::renderTemplate('header', $data);
-        View::render('welcome/welcome', $data);
-        View::renderTemplate('footer', $data);
-    }
-
-    public function sick()
-    {
         $data = [];
+        $data['date_today'] = date("d-m-Y");
+        $data['title'] = 'Verlof aanvragen';
 
         View::renderTemplate('header', $data);
-        View::render('leave/sick', $data);
-        View::renderTemplate('footer', $data);
-    }
-
-    public function holiday()
-    {
-        $data = [];
-
-        View::renderTemplate('header', $data);
-        View::render('leave/holiday', $data);
+        View::render('leave/index', $data);
         View::renderTemplate('footer', $data);
     }
 }

@@ -33,7 +33,7 @@ class Authentication extends Controller
 
 	public function login()
 	{
-		url::redirect('leave/sick');
+		url::redirect('leave');
 	}
 
 	public function logout()

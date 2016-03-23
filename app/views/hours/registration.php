@@ -7,7 +7,7 @@
  */
 ?>
 <div class="page-header">
-	<h1><?php echo $data['title'] ?></h1>
+	<h1><?php echo $data['title'] ?> </h1>
 </div>
 
 <div class="panel panel-default col-md-12 ">

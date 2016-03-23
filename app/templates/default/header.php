@@ -27,6 +27,7 @@ $hooks = Hooks::get();
         '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css',
         Url::templatePath().'css/style.css',
         Url::templatePath().'css/bootstrap-datepicker.min.css',
+        Url::templatePath().'css/font-awesome.min.css',
     ]);
 
     //hook for plugging in css
@@ -41,7 +42,6 @@ $hooks->run('afterBody');
 ?>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -55,8 +55,7 @@ $hooks->run('afterBody');
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div class="container">
                 <ul class="nav navbar-nav">
-                    <li><a href="/leave/sick">Ziek</a></li>
-                    <li><a href="/leave/holiday">Vakantie</a></li>
+                    <li><a href="/leave">Verlof</a></li>
                     <li><a href="/hours/registration">Uren</a></li>
                     <li><a href="/hours/overview">Overzicht</a></li>
                 </ul>
@@ -64,8 +63,8 @@ $hooks->run('afterBody');
                     <li><a href="/authentication/logout">Uitloggen</a></li>
                 </ul>
             </div>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+        </div>
+    </div>
 </nav>
 
 <div class="container">
