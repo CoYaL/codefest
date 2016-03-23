@@ -42,7 +42,6 @@ class Hours extends Controller
 	{
 		//cast to userid to int
 		$userID = intval(Session::get('userID'));
-
 		$userProjects = $this->model->getUserProjects($userID);
 
 		foreach ($userProjects as $project) {

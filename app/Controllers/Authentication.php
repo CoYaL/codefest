@@ -58,7 +58,9 @@ class Authentication extends Controller
             //if validation has passed carry on
             if(!$error){
                 Session::set('loggedin',true);
-                Session::set('userID',$this->model->getUserID($username));
+				$userId = $this->model->getUserId($username)->user_id;
+				var_dump($userId);
+                Session::set('userID',$userId);
 
                 url::redirect('leave');
             }
