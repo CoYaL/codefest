@@ -35,12 +35,12 @@ COLLATE = utf8_unicode_ci;
 -- Dumping data for table `roles`
 --
 
-INSERT INTO `roles` (`role_id`, `role`) VALUES
-  (0, 'admin'),
-  (1, 'systeem'),
-  (2, 'medewerker'),
-  (3, 'administratiemedewerker'),
-  (4, 'manager');
+INSERT INTO `roles` (`role`) VALUES
+  ('admin'),
+  ('systeem'),
+  ('medewerker'),
+  ('administratiemedewerker'),
+  ('manager');
 
 
 -- -----------------------------------------------------
@@ -50,7 +50,7 @@ DROP TABLE IF EXISTS `codefest`.`users` ;
 
 CREATE TABLE IF NOT EXISTS `codefest`.`users` (
   `user_id` INT(11) NOT NULL AUTO_INCREMENT,
-  `role_id` INT(11) NOT NULL DEFAULT '0',
+  `role_id` INT(11) NOT NULL DEFAULT '1',
   `username` VARCHAR(255) CHARACTER SET 'utf8' NOT NULL,
   `password` VARCHAR(255) CHARACTER SET 'utf8' NOT NULL,
   `firstname` VARCHAR(100) CHARACTER SET 'utf8' NOT NULL,
