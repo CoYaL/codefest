@@ -8,7 +8,6 @@
 	<div class="panel-heading">
 		<i class="fa fa-table"></i> <?php echo $data['title'] ?>
 	</div>
-	<div class="panel-body">
 		<table class="table table-striped">
 			<thead>
 			<tr>
@@ -18,6 +17,7 @@
 				<th>Van datum</th>
 				<th>Tot datum</th>
 				<th>Beschrijving</th>
+				<th>Status</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -29,11 +29,30 @@
 				<td>%s</td>
 				<td>%s</td>
 				<td>%s</td>
-				<td class="btn-group"><button class="btn btn-success">Accepteren</button><button class="btn btn-danger">Afwijzen</button></td>
-			</tr>',$request['name'],$request['department'],$request['reason'],$request['startDate'],$request['endDate'],$request['description']);
+				',$request['name'],$request['department'],$request['reason'],$request['startDate'],$request['endDate'],$request['description']);
+				switch($request['status']){
+					case 'accepted':
+						echo '<td class="success">Accepted</td>';
+						break;
+					case 'denied':
+						echo '<td class="danger">Denied</td>';
+						break;
+					default:
+						echo '	<td>
+									<button class="btn btn-success status" data-type="accepted" id="'.$request['leaveID'].'">
+										<i class="fa fa-check"></i>
+									</button>
+									<button class="btn btn-danger status" data-type="denied" id="'.$request['leaveID'].'">
+										<i class="fa fa-times"></i>
+									</button>
+								</td>
+			</tr>';
+						break;
+				}
 			}?>
 			</tbody>
 		</table>
-	</div>
+	<script type="text/javascript">
 
+	</script>
 </div>

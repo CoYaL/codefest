@@ -39,4 +39,18 @@ class Users extends Model
 
         return $data;
     }
+
+    public function create($data = [])
+    {
+        $userId = $this->db->insert('users', $data);
+        return $userId;
+    }
+
+    public function update($data, $where){
+        $this->db->update("users",$data,$where);
+    }
+
+    public function delete($userID){
+        $this->db->delete('users',array('user_id'=>$userID));
+    }
 }

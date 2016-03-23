@@ -37,6 +37,7 @@ Router::any('users/getusers', 'Controllers\User@getUsers');
 /* Management */
 Router::any('management', 'Controllers\Management@index');
 Router::any('management/leaveRequests', 'Controllers\Management@leaveRequests');
+Router::post('management/updateLeave', 'Controllers\Management@updateLeave');
 
 
 /* Module routes. */
