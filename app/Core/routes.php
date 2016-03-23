@@ -13,10 +13,15 @@ use Core\Router;
 use Helpers\Hooks;
 
 /* Define routes. */
-Router::any('subpage', 'Controllers\Welcome@subPage');
+/* Leave */
+Router::any('leave/sick', 'Controllers\Leave@sick');
+Router::any('leave/vacation', 'Controllers\Leave@vacation');
+/* Authentication */
 Router::any('', 'Controllers\Authentication@index');
 Router::post('authentication/login', 'Controllers\Authentication@login');
 Router::any('authentication/logout', 'Controllers\Authentication@logout');
+
+/* Hours */
 Router::any('hours', 'Controllers\Hours@index');
 Router::any('hours/registration', 'Controllers\Hours@registration');
 Router::any('hours/overview', 'Controllers\Hours@overview');
