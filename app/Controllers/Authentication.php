@@ -30,6 +30,9 @@ class Authentication extends Controller
 	 */
 	public function index($error = null)
 	{
+		if(Session::get('loggedin')){
+			Url::redirect('leave');
+		}
 		$data['title'] = 'Login';
 
 		View::renderTemplate('header', $data);
@@ -41,7 +44,7 @@ class Authentication extends Controller
 	{
         //redirect user if already loggedin
         if(Session::get('loggedin')){
-            Url::redirect();
+            Url::redirect('leave');
         }
         //check if submit button contains POST data
         if(isset($_POST['submit'])){
