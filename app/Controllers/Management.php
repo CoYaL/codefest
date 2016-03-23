@@ -26,6 +26,7 @@ class Management extends Controller
 	{
 		$data['title'] = 'Management';
 
+
 		View::renderTemplate('header', $data);
 		View::render('management/index', $data);
 		View::renderTemplate('footer', $data);
@@ -35,18 +36,37 @@ class Management extends Controller
 	{
 		$data['title'] = 'Verlof verzoeken';
 		$data['requests'] = [
-			['name' => 'Harry Potter', 'department' => 'commercial', 'reason' => 'sick',
+			['leaveID' => 0, 'name' => 'Harry Potter', 'department' => 'commercial', 'reason' => 'sick',
 				'startDate' => '23/03/2016', 'endDate' => '30/03/2016', 'description' => '', 'status' => null],
-			['name' => 'Jamey van Heel', 'department' => 'helpdesk', 'reason' => 'vacation',
+			['leaveID' => 1, 'name' => 'Jamey van Heel', 'department' => 'helpdesk', 'reason' => 'vacation',
 				'startDate' => '23/03/2016', 'endDate' => '30/03/2016', 'description' => 'Kerst inhalen', 'status' => 'denied'],
-			['name' => 'Conner Orth', 'department' => 'administration', 'reason' => 'vacation',
+			['leaveID' => 2, 'name' => 'Conner Orth', 'department' => 'administration', 'reason' => 'vacation',
 				'startDate' => '23/03/2016', 'endDate' => '30/03/2016', 'description' => 'Oud en Nieuw', 'status' => 'accepted'],
-			['name' => 'Albus Perkamentus', 'department' => 'management', 'reason' => 'sick',
+			['leaveID' => 3, 'name' => 'Albus Perkamentus', 'department' => 'management', 'reason' => 'sick',
 				'startDate' => '23/03/2016', 'endDate' => '30/03/2016', 'description' => '', 'status' => null],
 		];
+
+		$data['javascript'] = ['management/leaveRequests'];
 
 		View::renderTemplate('header', $data);
 		View::render('management/leaveRequests', $data);
 		View::renderTemplate('footer', $data);
+	}
+
+	public function updateLeave()
+	{
+		$returnData = [];
+		if(isset($_POST['state']) && isset($_POST['id'])) {
+			$returnData['id'] = $_POST['id'];
+			$returnData['class'] = 'success';
+			$returnData['status'] = 'Accepted';
+
+			if($_POST['state'] === 'denied') {
+				$returnData['class'] = 'danger';
+				$returnData['status'] = 'Denied';
+			}
+		}
+
+		echo json_encode($returnData);
 	}
 }

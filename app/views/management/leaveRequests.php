@@ -8,7 +8,6 @@
 	<div class="panel-heading">
 		<i class="fa fa-table"></i> <?php echo $data['title'] ?>
 	</div>
-	<div class="panel-body">
 		<table class="table table-striped">
 			<thead>
 			<tr>
@@ -39,13 +38,21 @@
 						echo '<td class="danger">Denied</td>';
 						break;
 					default:
-						echo '<td class="btn-group"><button class="btn btn-success">Accepteren</button><button class="btn btn-danger">Afwijzen</button></td>
+						echo '	<td>
+									<button class="btn btn-success status" data-type="accepted" id="'.$request['leaveID'].'">
+										<i class="fa fa-check"></i>
+									</button>
+									<button class="btn btn-danger status" data-type="denied" id="'.$request['leaveID'].'">
+										<i class="fa fa-times"></i>
+									</button>
+								</td>
 			</tr>';
 						break;
 				}
 			}?>
 			</tbody>
 		</table>
-	</div>
+	<script type="text/javascript">
 
+	</script>
 </div>
