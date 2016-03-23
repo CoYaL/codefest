@@ -160,13 +160,19 @@ CREATE TABLE IF NOT EXISTS `codefest`.`global_settings` (
   `global_setting_id` INT(11) NOT NULL AUTO_INCREMENT,
   `fulltime_hours` INT(11) NOT NULL,
   `year` YEAR NOT NULL,
-  `vacation_days` FLOAT(3,2) NOT NULL,
-  `vacation_threshold` FLOAT(3,2) NOT NULL,
+  `vacation_days` DECIMAL(5,2) NOT NULL,
+  `vacation_threshold` DECIMAL(5,2) NOT NULL,
   PRIMARY KEY (`global_setting_id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
 
+-- -----------------------------------------------------
+--Dumping data for table `global_settings`
+-- -----------------------------------------------------
+
+INSERT INTO `global_settings` (`global_setting_id`, `fulltime_hours`, `year`, `vacation_days`, `vacation_threshold`) VALUES ('1', '40', '2016', '25', '5');
+INSERT INTO `global_settings` (`global_setting_id`, `fulltime_hours`, `year`, `vacation_days`, `vacation_threshold`) VALUES ('2', '38', '2017', '27', '7');
 
 -- -----------------------------------------------------
 -- Table `codefest`.`holidays`
