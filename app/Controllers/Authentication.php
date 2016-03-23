@@ -36,4 +36,9 @@ class Authentication extends Controller
 		url::redirect('leave/index');
 	}
 
+	public function logout()
+	{
+		url::redirect('');
+	}
+
 }

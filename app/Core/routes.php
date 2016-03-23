@@ -15,7 +15,8 @@ use Helpers\Hooks;
 /* Define routes. */
 Router::any('subpage', 'Controllers\Welcome@subPage');
 Router::any('', 'Controllers\Authentication@index');
-Router::post('', 'Controllers\Authentication@login');
+Router::post('authentication/login', 'Controllers\Authentication@login');
+Router::any('authentication/logout', 'Controllers\Authentication@logout');
 
 
 /* Module routes. */
