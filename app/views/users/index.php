@@ -22,9 +22,6 @@
                 <th>Email</th>
                 <th>Geboortedatum</th>
                 <th>Rol</th>
-                <th>Factor</th>
-                <th>Department</th>
-                <th>State</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -50,13 +47,17 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Modal title</h4>
+                <h4 class="modal-title">Edit User</h4>
             </div>
             <div class="modal-body">
                 <form >
                     <div class="form-group">
+                        <label for="username">Gebruikersnaam</label>
+                        <input type="text" class="form-control" name="username" required>
+                    </div>
+                    <div class="form-group">
                         <label for="firstname">Voornaam</label>
-                        <input type="text" class="form-control" name="firstname">
+                        <input type="text" class="form-control" name="firstname" required>
                     </div>
                     <div class="form-group">
                         <label for="start_date">Tussenvoegsel</label>
@@ -64,7 +65,7 @@
                     </div>
                     <div class="form-group">
                         <label for="start_date">Achternaam</label>
-                        <input type="text" class="form-control" name="lastname">
+                        <input type="text" class="form-control" name="lastname" required>
                     </div>
                     <div class="form-group">
                         <label for="start_date">Email</label>
@@ -72,23 +73,11 @@
                     </div>
                     <div class="form-group">
                         <label for="start_date">Geboortedatum</label>
-                        <input type="text" class="form-control datepicker" name="date_of_birth">
+                        <input type="text" class="form-control datepicker" name="date_of_birth" required>
                     </div>
                     <div class="form-group">
                         <label for="start_date">Rol</label>
-                        <select type="text" class="form-control" name="role"></select>
-                    </div>
-                    <div class="form-group">
-                        <label for="start_date">Factor</label>
-                        <input type="text" class="form-control" name="factor">
-                    </div>
-                    <div class="form-group">
-                        <label for="start_date">Department</label>
-                        <select class="form-control" name="department"></select>
-                    </div>
-                    <div class="form-group">
-                        <label for="start_date">Status</label>
-                        <select class="form-control" name="state"></select>
+                        <select type="text" class="form-control" name="role" required></select>
                     </div>
                 </form>
             </div>
@@ -106,9 +95,6 @@
         <td>{{EMAIL}}</td>
         <td>{{BIRTHDATE}}</td>
         <td>{{ROLE}}</td>
-        <td>{{FACTOR}}</td>
-        <td>{{DEPARTMENT}}</td>
-        <td>{{STATE}}</td>
         <td>
             <button class="btn btn-warning btn-sm" data-id="{{ID}}" data-record>
                 <i class="fa fa-list"></i>

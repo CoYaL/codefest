@@ -273,6 +273,9 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
 
+INSERT INTO `users` (`user_id`, `role_id`, `username`, `password`, `firstname`, `middlename`, `lastname`, `email`, `date_of_birth`) VALUES
+(1, 1, 'jameyheel', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'Jamey', 'van', 'Heel', 'jamey.heel@gmail.com', '1990-06-15');
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
