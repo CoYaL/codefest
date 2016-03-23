@@ -182,7 +182,7 @@ DROP TABLE IF EXISTS `codefest`.`leave` ;
 CREATE TABLE IF NOT EXISTS `codefest`.`leave` (
   `leave_id` INT(11) NOT NULL AUTO_INCREMENT,
   `employee_id` INT(11) NOT NULL,
-  `start_date` TIMESTAMP NOT NULL DEFAULT NULL,
+  `start_date` TIMESTAMP NULL DEFAULT NULL,
   `end_date` TIMESTAMP NULL DEFAULT NULL,
   `reason` ENUM('sick', 'vacation', 'other') CHARACTER SET 'utf8' NOT NULL DEFAULT 'other',
   `state` ENUM('accepted', 'denied', 'in review') CHARACTER SET 'utf8' NOT NULL DEFAULT 'in review',
