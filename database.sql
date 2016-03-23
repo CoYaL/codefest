@@ -164,7 +164,7 @@ DROP TABLE IF EXISTS `codefest`.`holidays` ;
 
 CREATE TABLE IF NOT EXISTS `codefest`.`holidays` (
   `holiday_id` INT(11) NOT NULL AUTO_INCREMENT,
-  `start_date` TIMESTAMP NOT NULL DEFAULT NULL,
+  `start_date` TIMESTAMP NULL DEFAULT NULL,
   `end_date` TIMESTAMP NULL DEFAULT NULL,
   `description` VARCHAR(255) CHARACTER SET 'utf8' NULL DEFAULT NULL,
   `payment_multiplier` FLOAT(3,2) NOT NULL DEFAULT '1.00',
