@@ -15,9 +15,12 @@ use Helpers\Hooks;
 
 class User extends Controller
 {
+    private $model;
+
     public function __construct()
     {
         parent::__construct();
+        $this->model = new \Models\Users();
     }
 
     public function index()
@@ -33,6 +36,25 @@ class User extends Controller
 
     public function add()
     {
+        $username = null;
+        $password = null;
+        $firstname = null;
+        $middlename = null;
+        $lastname = null;
+        $email = null;
+        $dateOfBirth = null;
+
+        $user = [
+            'username'=>$username,
+            'password'=>$password,
+            'firstname'=>$firstname,
+            'middlename'=>$middlename,
+            'lastname'=>$lastname,
+            'email'=>$email,
+            'date_of_birth'=>$dateOfBirth,
+
+        ];
+        $this->model->create($user);
     }
 
     public function edit()
