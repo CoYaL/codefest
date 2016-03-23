@@ -102,7 +102,8 @@ DROP TABLE IF EXISTS `codefest`.`projects` ;
 
 CREATE TABLE IF NOT EXISTS `codefest`.`projects` (
   `project_id` INT(11) NOT NULL AUTO_INCREMENT,
-  `start_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `name` VARCHAR(255) CHARACTER SET 'utf8' NULL DEFAULT NULL,
+  `start_date` TIMESTAMP NOT NULL DEFAULT NULL,
   `end_date` TIMESTAMP NULL DEFAULT NULL,
   PRIMARY KEY (`project_id`))
 ENGINE = InnoDB
@@ -163,7 +164,7 @@ DROP TABLE IF EXISTS `codefest`.`holidays` ;
 
 CREATE TABLE IF NOT EXISTS `codefest`.`holidays` (
   `holiday_id` INT(11) NOT NULL AUTO_INCREMENT,
-  `start_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `start_date` TIMESTAMP NOT NULL DEFAULT NULL,
   `end_date` TIMESTAMP NULL DEFAULT NULL,
   `description` VARCHAR(255) CHARACTER SET 'utf8' NULL DEFAULT NULL,
   `payment_multiplier` FLOAT(3,2) NOT NULL DEFAULT '1.00',
@@ -181,7 +182,7 @@ DROP TABLE IF EXISTS `codefest`.`leave` ;
 CREATE TABLE IF NOT EXISTS `codefest`.`leave` (
   `leave_id` INT(11) NOT NULL AUTO_INCREMENT,
   `employee_id` INT(11) NOT NULL,
-  `start_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `start_date` TIMESTAMP NOT NULL DEFAULT NULL,
   `end_date` TIMESTAMP NULL DEFAULT NULL,
   `reason` ENUM('sick', 'vacation', 'other') CHARACTER SET 'utf8' NOT NULL DEFAULT 'other',
   `state` ENUM('accepted', 'denied', 'in review') CHARACTER SET 'utf8' NOT NULL DEFAULT 'in review',
