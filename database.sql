@@ -174,7 +174,7 @@ DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
 
 -- -----------------------------------------------------
---Dumping data for table `global_settings`
+-- Dumping data for table `global_settings`
 -- -----------------------------------------------------
 
 INSERT INTO `global_settings` (`global_setting_id`, `fulltime_hours`, `year`, `vacation_days`, `vacation_threshold`) VALUES ('1', '40', '2016', '25', '5');
