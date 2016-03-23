@@ -43,14 +43,12 @@ class Authentication extends Controller
             Url::redirect();
         }
 
-        $error = false;
         //check if submit button contains POST data
         if(isset($_POST['submit'])){
             $username = $_POST['username'];
             $password = $_POST['password'];
 
             //validation
-
             if(Password::verify($password, $this->model->getHash($username)) == false){
                 $error[] = 'Gebruikersnaam of wachtwoord incorrect.';
             }
