@@ -27,7 +27,6 @@ CREATE TABLE IF NOT EXISTS `codefest`.`roles` (
   `role` VARCHAR(45) CHARACTER SET 'utf8' NULL DEFAULT NULL,
   PRIMARY KEY (`role_id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 5
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
 
