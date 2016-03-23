@@ -33,4 +33,18 @@ class Employee extends Model
         return $data;
     }
 
+    public function create($data = [])
+    {
+        $userId = $this->db->insert('employees', $data);
+        return $userId;
+    }
+
+    public function update($data, $where){
+        $this->db->update("employees", $data, $where);
+    }
+
+    public function delete($employeeID){
+        $this->db->delete('employees', array('employee_id'=>$employeeID));
+    }
+
 }
