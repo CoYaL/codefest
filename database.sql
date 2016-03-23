@@ -103,7 +103,7 @@ DROP TABLE IF EXISTS `codefest`.`projects` ;
 CREATE TABLE IF NOT EXISTS `codefest`.`projects` (
   `project_id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) CHARACTER SET 'utf8' NULL DEFAULT NULL,
-  `start_date` TIMESTAMP NOT NULL DEFAULT NULL,
+  `start_date` TIMESTAMP NULL DEFAULT NULL,
   `end_date` TIMESTAMP NULL DEFAULT NULL,
   PRIMARY KEY (`project_id`))
 ENGINE = InnoDB
