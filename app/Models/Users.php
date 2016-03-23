@@ -24,7 +24,8 @@ class Users extends Model
         if($limit != null && $offset != null){
             $limit = sprintf("LIMIT %s,%s",$limit,$offset);
         }
-        $data = $this->db->select("
+
+        $query = sprintf("
             SELECT u.*,
               r.*,
               e.*,
@@ -34,9 +35,17 @@ class Users extends Model
               ON u.role_id = r.role_id
             JOIN employees as e
               ON u.user_id = e.user_id
-            ".$limit
-        );
+              %s", $limit);
+        $data = $this->db->select($query);
 
+        return $data;
+    }
+
+    public function getRoles()
+    {
+        $data = $this->db->select("
+            SELECT *
+            FROM roles");
         return $data;
     }
 
