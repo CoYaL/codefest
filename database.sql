@@ -228,10 +228,10 @@ DROP TABLE IF EXISTS `codefest`.`project_occupation` ;
 
 CREATE TABLE IF NOT EXISTS `codefest`.`project_occupation` (
   `project_id` INT(11) NOT NULL AUTO_INCREMENT,
-  `helpdesk` INT(11) NOT NULL DEFAULT '0',
-  `commercial` INT(11) NOT NULL DEFAULT '0',
-  `administration` INT(11) NOT NULL DEFAULT '0',
-  `management` INT(11) NOT NULL DEFAULT '0',
+  `helpdesk` DECIMAL(5,2) NOT NULL DEFAULT '0',
+  `commercial` DECIMAL(5,2) NOT NULL DEFAULT '0',
+  `administration` DECIMAL(5,2) NOT NULL DEFAULT '0',
+  `management` DECIMAL(5,2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`project_id`),
   INDEX `fk_project_occupation_projects1_idx` (`project_id` ASC),
   CONSTRAINT `fk_project_id2`
@@ -242,6 +242,12 @@ CREATE TABLE IF NOT EXISTS `codefest`.`project_occupation` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
+
+--
+--dumping data for project_occupation
+--
+INSERT INTO `project_occupation` (`project_id`, `helpdesk`, `commercial`, `administration`, `management`) VALUES ('1', '1', '0.5', '0.00', '1.25');
+INSERT INTO `project_occupation` (`project_id`, `helpdesk`, `commercial`, `administration`, `management`) VALUES ('2', '0.75', '0.25', '2.00', '0.33');
 
 
 -- -----------------------------------------------------
