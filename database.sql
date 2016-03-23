@@ -81,8 +81,8 @@ CREATE TABLE IF NOT EXISTS `codefest`.`employees` (
   `user_id` INT(11) NOT NULL,
   `leave_id` INT(11) NULL DEFAULT NULL,
   `factor` FLOAT(3,2) NOT NULL DEFAULT '1.00',
-  `department` ENUM('helpdesk', 'commercial', 'administration', 'management') CHARACTER SET 'utf8' NOT NULL,
-  `state` ENUM('active', 'sick', 'vacation', 'inactive') CHARACTER SET 'utf8' NOT NULL,
+  `department` ENUM('helpdesk', 'commercieel', 'administratiefmedewerker', 'management') CHARACTER SET 'utf8' NOT NULL,
+  `state` ENUM('actief', 'ziek', 'vakantie', 'inactief') CHARACTER SET 'utf8' NOT NULL,
   PRIMARY KEY (`employee_id`),
   INDEX `fk_user_id_idx` (`user_id` ASC),
   CONSTRAINT `fk_user_id`
