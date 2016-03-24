@@ -55,12 +55,14 @@ class User extends Controller
             'role_id' => $role,
         ];
         $_POST['user_id'] = $this->model->create($user);
+        $_POST['date_of_birth'] = date("d-m-Y", $_POST['date_of_birth']);
 
         print json_encode($_POST);
     }
 
     public function edit()
     {
+        $user_id = $_POST['user_id'];
         $date = date_create_from_format('d-m-Y', $_POST['date_of_birth']);
         $username = $_POST['username'];
         $firstname = $_POST['firstname'];
@@ -79,13 +81,22 @@ class User extends Controller
             'date_of_birth' => $dateOfBirth,
             'role_id' => $role,
         ];
-        $_POST['user_id'] = $this->model->update($user);
+
+        $where = [
+            'user_id' => $user_id,
+        ];
+
+        $this->model->update($user,$where);
+        $_POST['date_of_birth'] = date("d-m-Y", $_POST['date_of_birth']);
 
         print json_encode($_POST);
     }
 
     public function delete()
     {
+        $user_id = $_POST['user_id'];
+
+        $this->model->delete($user_id);
     }
 
     public function getUsers()

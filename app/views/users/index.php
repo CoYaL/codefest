@@ -30,16 +30,6 @@
 
         </tbody>
     </table>
-    <div class="panel-footer">
-        <button class="btn btn-default" disabled>
-            <i class="fa fa-arrow-circle-left"></i> Terug
-        </button>
-        <button class="btn btn-default pull-right" disabled>
-            Volgende
-            <i class="fa fa-arrow-circle-right"></i>
-        </button>
-
-    </div>
 </div>
 
 <div class="modal fade" tabindex="-1" role="dialog" id="add_edit_modal">
@@ -51,6 +41,7 @@
             </div>
             <div class="modal-body">
                 <form >
+                    <input type="hidden" name="user_id">
                     <div class="form-group">
                         <label for="username">Gebruikersnaam</label>
                         <input type="text" class="form-control" name="username" required>
@@ -101,7 +92,7 @@
             </button>
         </td>
         <td>
-            <button class="btn btn-danger btn-sm" data-id="{{ID}}" id="delete_user">
+            <button class="btn btn-danger btn-sm delete_user" data-id="{{ID}}">
                 <i class="fa fa-trash"></i>
             </button>
         </td>

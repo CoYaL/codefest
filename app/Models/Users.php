@@ -28,7 +28,8 @@ class Users extends Model
         $query = sprintf("
             SELECT u.*,
               r.*,
-              (SELECT COUNT(*)) as maxRows
+              (SELECT COUNT(*)) as maxRows,
+              DATE_FORMAT(u.date_of_birth, '%%d-%%m-%%Y') as date_of_birth
             FROM users as u
             JOIN roles as r
               ON u.role_id = r.role_id
