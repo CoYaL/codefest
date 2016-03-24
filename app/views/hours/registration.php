@@ -13,9 +13,9 @@
 <div class="panel panel-default col-md-12 ">
 	<div class="panel-body">
 		Werknemer: <?php echo $data['employeeName']; ?>
-		<form id="registration" class="form-group" action="hours/submit" method="POST">
+		<form id="registration" class="form-group" action="/hours/submit" method="POST">
 			<div class="form-group col-md-6">
-					<label for="projects">Project</label><select class="form-control" name="project" id="projects">
+					<label for="projects">Project</label><select class="form-control" name="projectID" id="projects">
 						<?php foreach($data['projects'] as $value){
 							printf('<option value="%s">%s</option>',$value["id"],$value["name"]);
 						}?>
@@ -29,7 +29,7 @@
 					<label for="overtime">Aantal overuren</label><input type="number" id="overtime" name="overtime" class="form-control"/>
 				</div>
 				<div class="form-group col-md-8">
-					<label for="hours-worked">Aantal uren</label><input type="number" id="hours-worked" name="hours-worked" class="form-control"/>
+					<label for="hours-worked">Aantal uren</label><input type="number" id="worktime" name="worktime" class="form-control"/>
 				</div>
 				<div class="form-group col-md-8">
 					<button type="submit" class="btn btn-primary">Submit</button>
