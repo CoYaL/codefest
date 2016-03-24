@@ -295,6 +295,39 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
 
+--
+-- dump default into holidays
+--
+
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2018-03-09', '2018-03-09', 'Feestdag1', '0.7');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2016-07-05', '2016-07-05', 'Feestdag2', '0.8');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2018-01-07', '2018-01-07', 'Feestdag3', '0.1');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2016-07-02', '2016-07-02', 'Feestdag4', '0.2');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2016-04-06', '2016-04-06', 'Feestdag5', '0.4');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2017-02-08', '2017-02-08', 'Feestdag6', '0.2');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2016-08-01', '2016-08-01', 'Feestdag7', '0.7');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2016-08-11', '2016-08-11', 'Feestdag8', '0.7');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2016-06-03', '2016-06-03', 'Feestdag9', '0.4');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2016-05-06', '2016-05-06', 'Feestdag10', '0.7');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2017-02-07', '2017-02-07', 'Feestdag11', '0.7');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2016-06-03', '2016-06-03', 'Feestdag12', '0.4');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2017-01-08', '2017-01-08', 'Feestdag13', '0.6');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2016-06-06', '2016-06-06', 'Feestdag14', '1');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2017-04-05', '2017-04-05', 'Feestdag15', '0.1');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2017-10-11', '2017-10-11', 'Feestdag16', '0.4');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2017-06-11', '2017-06-11', 'Feestdag17', '0.6');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2018-03-01', '2018-03-01', 'Feestdag18', '0.7');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2016-02-05', '2016-02-05', 'Feestdag19', '0.2');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2016-04-09', '2016-04-09', 'Feestdag20', '0');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2016-02-08', '2016-02-08', 'Feestdag21', '0.4');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2016-11-11', '2016-11-11', 'Feestdag22', '0.2');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2018-03-12', '2018-03-12', 'Feestdag23', '0.4');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2018-01-04', '2018-01-04', 'Feestdag24', '0.2');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2017-01-01', '2017-01-01', 'Feestdag25', '0.3');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2018-01-05', '2018-01-05', 'Feestdag26', '1');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2017-11-02', '2017-11-02', 'Feestdag27', '0.7');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2016-06-09', '2016-06-09', 'Feestdag28', '0.4');
+INSERT INTO `holidays` (`start_date`, `end_date`, `description`, `payment_multiplier`) VALUES('2016-05-09', '2016-05-09', 'Feestdag29', '0.6');
 
 -- -----------------------------------------------------
 -- Table `codefest`.`leave`
