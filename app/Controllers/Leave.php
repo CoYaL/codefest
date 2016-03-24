@@ -37,8 +37,11 @@ class Leave extends Controller
         $data['title'] = 'Verlof aanvragen';
         $data['javascript'] = ['leave/index'];
 
+        $threshold = 5;
+        $threshold = date('d-m-Y', mktime(0, 0, 0,date('m'), date('d')+$threshold), date('Y'));
+
         View::renderTemplate('header', $data);
-        View::render('leave/index', $data);
+        View::render('leave/index', $data, $threshold);
         View::renderTemplate('footer', $data);
     }
 

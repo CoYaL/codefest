@@ -71,6 +71,8 @@ class Hours extends Model
         ",$startdate, $enddate, $user_id);
         $result['work'] = $this->db->select($query);
 
+
+
         $query = sprintf("
             SELECT SUM(DATEDIFF(l.start_date, COALESCE(l.end_date,NOW()))) as sick
             FROM employees as e 
@@ -92,6 +94,8 @@ class Hours extends Model
             AND reason = 'vakantie'
         ", $startdate, $enddate, $user_id);
         $result['holiday'] = $this->db->select($query);
+
+        Debug::log($user_id,['work'=>$result['work']],['sick'=>$result['sick']],['holiday'=>$result['holiday']]);
 
         return $result;
     }
