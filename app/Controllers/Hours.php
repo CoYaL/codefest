@@ -76,7 +76,7 @@ class Hours extends Controller
 		$startdate = date_create_from_format('d-m-Y', $_POST['startdate']);
 		$enddate = date_create_from_format('d-m-Y', $_POST['enddate']);
 		
-		$data = $this->model->getHours($startdate, $enddate);
+		$data = $this->model->getHours($startdate->format('Y-m-d'), $enddate->format('Y-m-d'));
 
 		print json_encode($data);
 	}
