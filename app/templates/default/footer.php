@@ -9,15 +9,15 @@ use Helpers\Url;
 //initialise hooks
 $hooks = Hooks::get();
 ?>
-
+<div class="<?php if(\Helpers\Session::get('role') === null) echo 'hidden';?>">
 <?php
 $users = new Models\Users();
 $user = $users->getUserById(\Helpers\Session::get('userID'));
 
-printf('<div class="alert alert-info"><h3>%s</h3></div>', $user->role);
+printf('<div class="alert alert-info "><h3>%s</h3></div>', $user->role);
 
 ?>
-
+</div>
 </div>
 
 <!-- JS -->

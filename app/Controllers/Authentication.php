@@ -69,7 +69,7 @@ class Authentication extends Controller
 				var_dump(Session::get('role'));
 				switch(Session::get('role')){
 					case '1':
-						url::redirect('leave');
+						url::redirect('users');
 						break;
 					case '2':
 						url::redirect('404');

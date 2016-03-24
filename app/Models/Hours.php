@@ -11,7 +11,6 @@ namespace Models;
 
 use Core\Model;
 use Helpers\Debug;
-use MongoDB\BSON\Timestamp;
 
 class Hours extends Model
 {
