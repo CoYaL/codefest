@@ -14,9 +14,14 @@ use Core\View;
 
 class Management extends Controller
 {
+
+	private $model;
+
 	public function __construct()
 	{
 		parent::__construct();
+
+		$this->model = new \Models\Management();
 	}
 
 	/**
@@ -35,16 +40,7 @@ class Management extends Controller
 	public function leaveRequests()
 	{
 		$data['title'] = 'Verlof verzoeken';
-		$data['requests'] = [
-			['leaveID' => 0, 'name' => 'Harry Potter', 'department' => 'commercial', 'reason' => 'sick',
-				'startDate' => '23/03/2016', 'endDate' => '30/03/2016', 'description' => '', 'status' => null],
-			['leaveID' => 1, 'name' => 'Jamey van Heel', 'department' => 'helpdesk', 'reason' => 'vacation',
-				'startDate' => '23/03/2016', 'endDate' => '30/03/2016', 'description' => 'Kerst inhalen', 'status' => 'denied'],
-			['leaveID' => 2, 'name' => 'Conner Orth', 'department' => 'administration', 'reason' => 'vacation',
-				'startDate' => '23/03/2016', 'endDate' => '30/03/2016', 'description' => 'Oud en Nieuw', 'status' => 'accepted'],
-			['leaveID' => 3, 'name' => 'Albus Perkamentus', 'department' => 'management', 'reason' => 'sick',
-				'startDate' => '23/03/2016', 'endDate' => '30/03/2016', 'description' => '', 'status' => null],
-		];
+		$data['requests'] = $this->model->getLeaveRequests();
 
 		$data['javascript'] = ['management/leaveRequests'];
 
@@ -65,8 +61,11 @@ class Management extends Controller
 				$returnData['class'] = 'danger';
 				$returnData['status'] = 'Denied';
 			}
+			$id = (int)$_POST['id'];
+			$state = $_POST['state'];
+			$result = $this->model->updateLeaveState($state, $id);
 		}
+			echo json_encode($returnData);
 
-		echo json_encode($returnData);
 	}
 }
