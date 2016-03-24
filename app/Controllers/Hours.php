@@ -64,7 +64,7 @@ class Hours extends Controller
 		$overtime = $_POST['overtime'];
 		$worktime = $_POST['worktime'];
 		$result = $this->model->registerHours($userID, $projectID, $overtime, $worktime);
-		var_dump($result);
+		\Helpers\Debug::log($result);
 		if($result){
 			Url::redirect('hours/registration');
 		}
