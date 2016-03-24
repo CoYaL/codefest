@@ -57,28 +57,25 @@ class Hours extends Controller
 
 	}
 
-	public function submit()
-	{
-		$userID = Session::get('userID');
-		$projectID = $_POST['projectID'];
-		$overtime = $_POST['overtime'];
-		$worktime = $_POST['worktime'];
-		$result = $this->model->registerHours($userID, $projectID, $overtime, $worktime);
-		\Helpers\Debug::log($result);
-		if($result){
-			Url::redirect('hours/registration');
-		}
-	}
-
-	/**
-	 * Define Overview page title and load template files.
-	 */
-	public function overview()
-	{
-		$data['title'] = 'Uren Overzicht';
-
-		View::renderTemplate('header', $data);
-		View::render('hours/overview', $data);
-		View::renderTemplate('footer', $data);
-	}
+    public function submit()
+    {
+        $userID = Session::get('userID');
+        $projectID = $_POST['projectID'];
+        $overtime = $_POST['overtime'];
+        $worktime = $_POST['worktime'];
+        $result = $this->model->registerHours($userID, $projectID, $overtime, $worktime);
+        if($result){
+            Url::redirect('hours/registration');
+        }
+    }
+    /**
+     * Define Overview page title and load template files.
+     */
+    public function overview()
+    {
+        $data['title'] = 'Uren Overzicht';
+        View::renderTemplate('header', $data);
+        View::render('hours/overview', $data);
+        View::renderTemplate('footer', $data);
+    }
 }
