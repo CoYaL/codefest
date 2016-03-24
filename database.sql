@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `codefest`.`employees` (
   `user_id` INT(11) NOT NULL,
   `factor` FLOAT(3,2) NOT NULL DEFAULT '1.00',
   `department` ENUM('helpdesk', 'commercieel', 'administratiefmedewerker', 'management') CHARACTER SET 'utf8' NOT NULL,
-  `state` ENUM('actief', 'ziek', 'vakantie', 'inactief') CHARACTER SET 'utf8' NOT NULL,
+  `state` ENUM('actief', 'ziek', 'vakantie', 'inactief') CHARACTER SET 'utf8' NOT NULL DEFAULT 'actief',
   PRIMARY KEY (`employee_id`),
   INDEX `fk_user_id_idx` (`user_id` ASC),
   CONSTRAINT `fk_user_id`
@@ -134,6 +134,41 @@ CREATE TABLE IF NOT EXISTS `codefest`.`employees` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
+
+
+--
+-- dump defaults for employees
+--
+
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '1', '0.8', 'administratiefmedewerker', 'inactief');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '2', '0.7', 'administratiefmedewerker', 'inactief');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '3', '0.6', 'commercieel', 'inactief');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '4', '1', 'administratiefmedewerker', 'vakantie');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '5', '1', 'helpdesk', 'ziek');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '6', '0.3', 'helpdesk', 'ziek');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '7', '0.6', 'administratiefmedewerker', 'vakantie');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '8', '0.1', 'management', 'vakantie');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '9', '0.6', 'administratiefmedewerker', 'actief');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '10', '0.5', 'management', 'inactief');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '11', '0.4', 'management', 'ziek');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '12', '0.5', 'commercieel', 'inactief');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '13', '0.6', 'helpdesk', 'actief');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '14', '0.6', 'management', 'actief');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '15', '0.4', 'helpdesk', 'ziek');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '16', '0.5', 'management', 'inactief');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '17', '0.7', 'administratiefmedewerker', 'actief');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '18', '0', 'management', 'ziek');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '19', '0.9', 'helpdesk', 'inactief');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '20', '0.9', 'helpdesk', 'inactief');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '21', '0.4', 'commercieel', 'inactief');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '22', '0.6', 'administratiefmedewerker', 'inactief');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '23', '0.8', 'commercieel', 'ziek');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '24', '0.2', 'management', 'actief');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '25', '0.8', 'commercieel', 'inactief');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '26', '0', 'administratiefmedewerker', 'ziek');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '27', '0.3', 'administratiefmedewerker', 'vakantie');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '28', '1', 'helpdesk', 'vakantie');
+INSERT INTO `employees` (`employee_id`, `user_id`, `factor`, `department`, `state`) VALUES (NULL, '29', '0', 'commercieel', 'inactief');
 
 
 -- -----------------------------------------------------
