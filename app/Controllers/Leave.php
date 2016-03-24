@@ -31,9 +31,14 @@ class Leave extends Controller
         $data = [];
         $data['date_today'] = date("d-m-Y");
         $data['title'] = 'Verlof aanvragen';
+        $data['javascript'] = ['leave/index'];
 
         View::renderTemplate('header', $data);
         View::render('leave/index', $data);
         View::renderTemplate('footer', $data);
+    }
+
+    public function addLeave(){
+
     }
 }

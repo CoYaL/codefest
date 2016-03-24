@@ -13,14 +13,14 @@
     <div class="panel-body">
         <form class="col-md-6" method="POST">
             <label class="radio-inline">
-                <input type="radio" name="leave_type" id="leave_type" value="sick" required> Ziek
+                <input type="radio" name="leave_type" id="leave_sick" value="sick" required> Ziek
             </label>
             <label class="radio-inline">
-                <input type="radio" name="leave_type" id="leave_type" value="holiday" required> Vakantie
+                <input type="radio" name="leave_type" id="leave_holiday" value="holiday" required> Vakantie
             </label>
             <div class="form-group">
                 <label for="start_date">Van</label>
-                <input type="text" class="form-control datepicker" name="start_date" id="start_date" value="<?php echo $data['date_today'] ?>">
+                <input type="text" class="form-control datepicker" name="start_date" id="start_date" value="<?php echo $data['date_today'] ?>" required>
             </div>
             <div class="form-group">
                 <label for="end_date">Tot</label>
