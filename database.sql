@@ -306,8 +306,8 @@ CREATE TABLE IF NOT EXISTS `codefest`.`leave` (
   `employee_id` INT(11) NOT NULL,
   `start_date` TIMESTAMP NULL DEFAULT NULL,
   `end_date` TIMESTAMP NULL DEFAULT NULL,
-  `reason` ENUM('sick', 'vacation', 'other') CHARACTER SET 'utf8' NOT NULL DEFAULT 'other',
-  `state` ENUM('accepted', 'denied', 'in review') CHARACTER SET 'utf8' NOT NULL DEFAULT 'in review',
+  `reason` ENUM('ziek', 'vakantie', 'overig') CHARACTER SET 'utf8' NOT NULL DEFAULT 'overig',
+  `state` ENUM('geaccepteerd', 'afgewezen', 'in behandeling') CHARACTER SET 'utf8' NOT NULL DEFAULT 'in behandeling',
   PRIMARY KEY (`leave_id`),
   INDEX `fk_employee_id_idx` (`employee_id` ASC),
   CONSTRAINT `fk_employee_id2`
