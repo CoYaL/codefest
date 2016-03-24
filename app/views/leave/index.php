@@ -9,6 +9,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <?php echo $data['title'] ;?>
+        <?php echo '<script>var threshold ="'.$data['threshold'].'";</script>'; ?>
     </div>
     <div class="panel-body">
         <form class="col-md-6" method="POST">
