@@ -53,11 +53,13 @@ class Users extends Model
         return $userId;
     }
 
-    public function update($data, $where){
+    public function update($data, $where)
+    {
         $this->db->update("users",$data,$where);
     }
 
-    public function delete($userID){
+    public function delete($userID)
+    {
         $this->db->delete('users',array('user_id'=>$userID));
     }
 }
