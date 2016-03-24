@@ -51,6 +51,9 @@ Router::post('employees/add', 'Controllers\Employee@add');
 Router::post('employees/edit', 'Controllers\Employee@edit');
 Router::post('employees/delete', 'Controllers\Employee@delete');
 
+/* Holidays */
+Router::any('holidays', 'Controllers\Holiday@index');
+
 /* Module routes. */
 $hooks = Hooks::get();
 $hooks->run('routes');
