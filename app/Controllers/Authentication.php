@@ -66,6 +66,32 @@ class Authentication extends Controller
 				Session::set('fullName',$fullName);
                 Session::set('userID',$userId);
                 Session::set('role',$this->model->getUser($username)->role_id);
+				var_dump(Session::get('role'));
+				switch(Session::get('role')){
+					case '1':
+						url::redirect('leave');
+						break;
+					case '2':
+						url::redirect('404');
+
+						break;
+					case '3':
+						url::redirect('leave');
+
+						break;
+					case '4':
+						url::redirect('employees');
+
+						break;
+					case '5':
+						url::redirect('management/leaveRequests');
+
+						break;
+					default:
+						url::redirect('404');
+						break;
+				}
+                Session::set('role',$this->model->getUser($username)->role_id);
                 url::redirect('leave');
             }
             else{
