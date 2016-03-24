@@ -70,12 +70,23 @@ class Hours extends Controller
             Url::redirect('hours/registration');
         }
     }
+
+	public function getHours()
+	{
+		$startdate = date_create_from_format('d-m-Y', $_POST['startdate']);
+		$enddate = date_create_from_format('d-m-Y', $_POST['enddate']);
+		
+		$data = $this->model->getHours($startdate, $enddate);
+
+		print json_encode($data);
+	}
     /**
      * Define Overview page title and load template files.
      */
     public function overview()
     {
         $data['title'] = 'Uren Overzicht';
+		$data['javascript'] = ['hours/overview'];
         View::renderTemplate('header', $data);
         View::render('hours/overview', $data);
         View::renderTemplate('footer', $data);
