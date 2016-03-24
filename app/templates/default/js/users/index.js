@@ -90,7 +90,9 @@
 
         $("tbody").on("click", ".delete_user", function () {
             var button = $(this);
+            console.log($(this).data("id"));
             $.post("users/delete", {"user_id": $(this).data("id")}, function (data) {
+                console.log(data);
                 button.closest("tr").remove();
             });
         });

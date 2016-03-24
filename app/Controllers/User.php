@@ -94,9 +94,15 @@ class User extends Controller
 
     public function delete()
     {
-        $user_id = $_POST['user_id'];
+        $user = [
+            'state' => 'inactief',
+        ];
 
-        $this->model->delete($user_id);
+        $where = [
+            'user_id' => $_POST['user_id'],
+        ];
+
+        $this->model->update($user,$where);
     }
 
     public function getUsers()
