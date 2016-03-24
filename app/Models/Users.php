@@ -54,6 +54,17 @@ class Users extends Model
         return $userId;
     }
 
+    public function getUserById($userId)
+    {
+        $data = $this->db->select("
+            SELECT *
+            FROM users as u
+            JOIN roles as r
+              ON u.role_id = r.role_id
+            WHERE user_id=:userId",array(':userId'=>$userId));
+        return $data[0];
+    }
+
     public function update($data, $where)
     {
         $this->db->update("users",$data,$where);

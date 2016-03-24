@@ -10,6 +10,14 @@ use Helpers\Url;
 $hooks = Hooks::get();
 ?>
 
+<?php
+$users = new Models\Users();
+$user = $users->getUserById(\Helpers\Session::get('userID'));
+
+printf('<div class="alert alert-info"><h3>%s</h3></div>', $user->role);
+
+?>
+
 </div>
 
 <!-- JS -->
