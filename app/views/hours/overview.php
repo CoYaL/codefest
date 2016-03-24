@@ -60,7 +60,11 @@
 			</form>
 		</div>
 		<div class="col-md-4">
-				
+			<div id="canvas_holder">
+				<canvas id="canvas" height="175" style="width:100%; margin:auto;">
+					Nerd je browser ondersteund geen canvas.
+				</canvas>
+			</div>
 		</div>
 	</div>
 </div>

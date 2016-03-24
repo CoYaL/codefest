@@ -27,6 +27,7 @@ $jsArray = [
     Url::templatePath().'js/jquery.js',
     Url::templatePath().'js/app.js',
     Url::templatePath().'js/bootstrap-datepicker.min.js',
+    Url::templatePath().'js/Chart.min.js',
     '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js',
 ];
 
