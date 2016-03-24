@@ -79,9 +79,39 @@ INSERT INTO `users` (`user_id`, `role_id`, `username`, `password`, `firstname`, 
   (2, 2, 'systeem', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'systeem', NULL, 'meetsys', NULL, '2016-03-01'),
   (3, 3, 'medewerker', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'mede', NULL, 'werker1', NULL, '2016-03-01'),
   (4, 4, 'administratie', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'admini', NULL, 'stratie', NULL, '2016-03-01'),
-  (5, 5, 'manager', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'mana', NULL, 'ger', NULL, '2016-03-01');
-
-
+  (5, 5, 'manager', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'mana', NULL, 'ger', NULL, '2016-03-01'),
+  (6, 1, 'jameyheel', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'Jamey', 'van', 'Heel', 'jamey.heel@gmail.com', '1990-06-15');
+INSERT INTO `users` (`role_id`, `username`, `password`, `firstname`, `middlename`, `lastname`, `email`, `date_of_birth`) VALUES
+  (1, 'admin2', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'admin', NULL, 'nimda', NULL, '2016-03-01'),
+  (2, 'systeem2', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'systeem', NULL, 'meetsys', NULL, '2016-03-01'),
+  (3, 'medewerker2', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'mede', NULL, 'werker1', NULL, '2016-03-01'),
+  (4, 'administratie2', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'admini', NULL, 'stratie', NULL, '2016-03-01'),
+  (5, 'manager2', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'mana', NULL, 'ger', NULL, '2016-03-01'),
+  (1, 'admin3', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'admin', NULL, 'nimda', NULL, '2016-03-01'),
+  (2, 'systeem3', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'systeem', NULL, 'meetsys', NULL, '2016-03-01'),
+  (3, 'medewerker3', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'mede', NULL, 'werker1', NULL, '2016-03-01'),
+  (4, 'administratie3', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'admini', NULL, 'stratie', NULL, '2016-03-01'),
+  (5, 'manager3', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'mana', NULL, 'ger', NULL, '2016-03-01'),
+  (1, 'admin4', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'admin', NULL, 'nimda', NULL, '2016-03-01'),
+  (2, 'systeem4', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'systeem', NULL, 'meetsys', NULL, '2016-03-01'),
+  (3, 'medewerker4', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'mede', NULL, 'werker1', NULL, '2016-03-01'),
+  (4, 'administratie4', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'admini', NULL, 'stratie', NULL, '2016-03-01'),
+  (5, 'manager4', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'mana', NULL, 'ger', NULL, '2016-03-01'),
+  (1, 'admin5', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'admin', NULL, 'nimda', NULL, '2016-03-01'),
+  (2, 'systeem5', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'systeem', NULL, 'meetsys', NULL, '2016-03-01'),
+  (3, 'medewerker5', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'mede', NULL, 'werker1', NULL, '2016-03-01'),
+  (4, 'administratie5', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'admini', NULL, 'stratie', NULL, '2016-03-01'),
+  (5, 'manager5', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'mana', NULL, 'ger', NULL, '2016-03-01'),
+  (1, 'admin6', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'admin', NULL, 'nimda', NULL, '2016-03-01'),
+  (2, 'systeem6', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'systeem', NULL, 'meetsys', NULL, '2016-03-01'),
+  (3, 'medewerker6', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'mede', NULL, 'werker1', NULL, '2016-03-01'),
+  (4, 'administratie6', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'admini', NULL, 'stratie', NULL, '2016-03-01'),
+  (5, 'manager6', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'mana', NULL, 'ger', NULL, '2016-03-01'),
+  (1, 'admin7', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'admin', NULL, 'nimda', NULL, '2016-03-01'),
+  (2, 'systeem7', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'systeem', NULL, 'meetsys', NULL, '2016-03-01'),
+  (3, 'medewerker7', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'mede', NULL, 'werker1', NULL, '2016-03-01'),
+  (4, 'administratie7', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'admini', NULL, 'stratie', NULL, '2016-03-01'),
+  (5, 'manager7', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'mana', NULL, 'ger', NULL, '2016-03-01');
 
 -- -----------------------------------------------------
 -- Table `codefest`.`employees`
@@ -174,7 +204,7 @@ DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
 
 -- -----------------------------------------------------
---Dumping data for table `global_settings`
+-- Dumping data for table `global_settings`
 -- -----------------------------------------------------
 
 INSERT INTO `global_settings` (`global_setting_id`, `fulltime_hours`, `year`, `vacation_days`, `vacation_threshold`) VALUES ('1', '40', '2016', '25', '5');
@@ -244,7 +274,7 @@ DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
 
 --
---dumping data for project_occupation
+-- dumping data for project_occupation
 --
 INSERT INTO `project_occupation` (`project_id`, `helpdesk`, `commercial`, `administration`, `management`) VALUES ('1', '1', '0.5', '0.00', '1.25');
 INSERT INTO `project_occupation` (`project_id`, `helpdesk`, `commercial`, `administration`, `management`) VALUES ('2', '0.75', '0.25', '2.00', '0.33');
@@ -272,10 +302,6 @@ CREATE TABLE IF NOT EXISTS `codefest`.`vacation_days` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
-
-INSERT INTO `users` (`user_id`, `role_id`, `username`, `password`, `firstname`, `middlename`, `lastname`, `email`, `date_of_birth`) VALUES
-(1, 1, 'jameyheel', '$2y$10$19AIpcvZaT0uB7Cva1pvgOJESSlgdR3mB1ZZ0TxJE12h8XPWMtQFe', 'Jamey', 'van', 'Heel', 'jamey.heel@gmail.com', '1990-06-15');
-
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
