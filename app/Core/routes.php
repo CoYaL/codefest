@@ -48,6 +48,9 @@ Router::post('employees/getusers', 'Controllers\Employee@getUsers');
 Router::post('employees/getstates', 'Controllers\Employee@getStates');
 Router::post('employees/getdepartments', 'Controllers\Employee@getDepartments');
 
+/* Holidays */
+Router::any('holidays', 'Controllers\Holiday@index');
+
 /* Module routes. */
 $hooks = Hooks::get();
 $hooks->run('routes');
