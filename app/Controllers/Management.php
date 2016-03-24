@@ -55,11 +55,11 @@ class Management extends Controller
 		if(isset($_POST['state']) && isset($_POST['id'])) {
 			$returnData['id'] = $_POST['id'];
 			$returnData['class'] = 'success';
-			$returnData['status'] = 'Accepted';
+			$returnData['status'] = 'Geaccepteerd';
 
-			if($_POST['state'] === 'denied') {
+			if($_POST['state'] === 'afgewezen') {
 				$returnData['class'] = 'danger';
-				$returnData['status'] = 'Denied';
+				$returnData['status'] = 'Afgewezen';
 			}
 			$id = (int)$_POST['id'];
 			$state = $_POST['state'];

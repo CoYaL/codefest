@@ -30,18 +30,18 @@
 				',$request->firstname.' '.$request->middlename.' '.$request->lastname,
 					$request->department,$request->reason,$request->start_date,$request->end_date);
 				switch($request->state){
-					case 'accepted':
-						echo '<td class="success">Accepted</td>';
+					case 'geaccepteerd':
+						echo '<td class="success">Geaccepteerd</td>';
 						break;
-					case 'denied':
-						echo '<td class="danger">Denied</td>';
+					case 'afgewezen':
+						echo '<td class="danger">Afgewezen</td>';
 						break;
 					default:
 						echo '	<td>
-									<button class="btn btn-success status" data-type="accepted" id="'.$request->leave_id.'">
+									<button class="btn btn-success status" data-type="geaccepteerd" id="'.$request->leave_id.'">
 										<i class="fa fa-check"></i>
 									</button>
-									<button class="btn btn-danger status" data-type="denied" id="'.$request->leave_id.'">
+									<button class="btn btn-danger status" data-type="afgewezen" id="'.$request->leave_id.'">
 										<i class="fa fa-times"></i>
 									</button>
 								</td>
