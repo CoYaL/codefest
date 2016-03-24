@@ -10,7 +10,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <i class="fa fa-users"></i>&nbsp;Medewerker Overzicht
-        <a class="btn btn-primary btn-sm pull-right" id="add_employee">
+        <a class="btn btn-primary btn-sm pull-right <?php if(\Helpers\Session::get('role') != 4) echo 'hidden';?>" id="add_employee">
             <i class="fa fa-plus"></i>
         </a>
         <div style="clear:both"></div>
@@ -75,12 +75,12 @@
         <td>{{DEPARTMENT}}</td>
         <td>{{STATE}}</td>
         <td>
-            <button class="btn btn-warning btn-sm center-block" data-id="{{ID}}" data-record>
+            <button class="btn btn-warning btn-sm center-block" data-id="{{ID}}" data-record <?php if(\Helpers\Session::get('role') != 4) echo 'disabled';?>>
                 <i class="fa fa-list"></i>
             </button>
         </td>
         <td>
-            <button class="btn btn-danger btn-sm center-block delete_employee" data-id="{{ID}}">
+            <button class="btn btn-danger btn-sm center-block delete_employee" data-id="{{ID}}" <?php if(\Helpers\Session::get('role') != 4) echo 'disabled';?>>
                 <i class="fa fa-trash"></i>
             </button>
         </td>
