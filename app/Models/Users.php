@@ -33,7 +33,8 @@ class Users extends Model
             FROM users as u
             JOIN roles as r
               ON u.role_id = r.role_id
-              %s", $limit);
+            WHERE u.state = 'actief'
+            %s", $limit);
         $data = $this->db->select($query);
 
         return $data;
