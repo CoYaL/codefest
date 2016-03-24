@@ -23,7 +23,7 @@
 			</div>
 			<div class="col-md-6">
 				<div class="form-group col-md-8">
-					<label for="date">Datum</label><input type="text" id="date" class="datepicker form-control" name="date" placeholder="Pick a date" />
+					<label for="date">Datum</label><input type="text" id="date" class="datepicker form-control" name="date" placeholder="Pick a date" required/>
 				</div>
 				<div class="form-group col-md-8">
 					<label for="overtime">Aantal overuren</label><input type="number" id="overtime" name="overtime" class="form-control"/>

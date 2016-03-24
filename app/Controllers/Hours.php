@@ -60,10 +60,12 @@ class Hours extends Controller
     public function submit()
     {
         $userID = Session::get('userID');
+		$date = date_create_from_format('d-m-Y',$_POST['date']);
+		$day = $date->format('Y-m-d');
         $projectID = $_POST['projectID'];
         $overtime = $_POST['overtime'];
         $worktime = $_POST['worktime'];
-        $result = $this->model->registerHours($userID, $projectID, $overtime, $worktime);
+        $result = $this->model->registerHours($userID, $projectID, $day, $overtime, $worktime);
         if($result){
             Url::redirect('hours/registration');
         }

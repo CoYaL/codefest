@@ -11,6 +11,7 @@ namespace Models;
 
 use Core\Model;
 use Helpers\Debug;
+use MongoDB\BSON\Timestamp;
 
 class Hours extends Model
 {
@@ -32,7 +33,15 @@ class Hours extends Model
 		return $data;
 	}
 
-	public function registerHours($userID, $projectID, $overtime = 0, $worktime = 0)
+	/**
+	 * @param $userID
+	 * @param $projectID
+	 * @param  $date
+	 * @param int $overtime
+	 * @param int $worktime
+	 * @return int
+	 */
+	public function registerHours($userID, $projectID, $date, $overtime = 0, $worktime = 0)
 	{
 		$employeeID = $this->db->select("
 		SELECT e.employee_id
@@ -40,8 +49,8 @@ class Hours extends Model
 		WHERE e.user_id = :userID",[':userID' => $userID])[0]->employee_id;
 		//cast employeeID to int
 		$employeeID = intval($employeeID);
-		$result = $this->db->update('employee_project', ['overtime' => $overtime, 'worktime' => $worktime],
-			['employee_id' => $employeeID, 'project_id' => $projectID]);
+		$result = $this->db->insert('workdays', ['overtime' => $overtime, 'worktime' => $worktime,
+			'day' => $date,'employee_id' => $employeeID, 'project_id' => $projectID]);
 		Debug::log($result);
 		return $result;
 	}
