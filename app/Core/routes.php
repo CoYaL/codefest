@@ -47,6 +47,9 @@ Router::post('employees/getemployees', 'Controllers\Employee@getEmployees');
 Router::post('employees/getusers', 'Controllers\Employee@getUsers');
 Router::post('employees/getstates', 'Controllers\Employee@getStates');
 Router::post('employees/getdepartments', 'Controllers\Employee@getDepartments');
+Router::post('employees/add', 'Controllers\Employee@add');
+Router::post('employees/edit', 'Controllers\Employee@edit');
+Router::post('employees/delete', 'Controllers\Employee@delete');
 
 /* Module routes. */
 $hooks = Hooks::get();

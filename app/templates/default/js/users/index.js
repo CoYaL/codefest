@@ -17,25 +17,12 @@
 
             tr.find("button[data-record]").data(user);
         });
-        $("button[data-record]").click(function () {
-            var button = $("#add_edit_modal button[data-type]");
-            button.data("type", "edit");
-
-            var data = $(this).data();
-
-            $.each($("#add_edit_modal input, #add_edit_modal select"), function () {
-                var name = $(this).attr("name");
-                $(this).val(data[name]);
-            });
-
-            $("#add_edit_modal").modal("show");
-        });
     };
 
     var insert_user = function (user, type) {
         var html = $("script#template-user-record").html();
 
-        var role = $("select[name=role]").find("option[value={0}]".format(user.role)).html();
+        var role = $("select[name=role_id]").find("option[value={0}]".format(user.role_id)).html();
 
         var template = html.replace(/\{\{ID\}\}/g, user.user_id || 0);
         template = template.replace(/\{\{NAME\}\}/g, "{0} {1} {2}".format(user.firstname, user.middlename, user.lastname));
@@ -52,25 +39,6 @@
             tr.replaceWith(template);
         }
         tr.find("button[data-record]").data(user);
-
-        $("button[data-record]").click(function () {
-            var button = $("#add_edit_modal button[data-type]");
-            button.data("type", "edit");
-
-            var data = $(this).data();
-
-            $.each($("#add_edit_modal input"), function () {
-                var name = $(this).attr("name");
-                $(this).val(data[name]);
-            });
-
-            $.each($("#add_edit_modal select"), function () {
-                var name = $(this).attr("name");
-                $(this).find("option[value={0}]".format(data[name])).attr("selected", true);
-            });
-
-            $("#add_edit_modal").modal("show");
-        });
     }
 
     $(document).ready(function () {
@@ -78,7 +46,8 @@
         $.post("users/getroles", {}, function (result) {
             roles = JSON.parse(result) || [];
             $.each(roles, function (index, role) {
-                $("#add_edit_modal select[name=role]").append("<option value=\"{0}\">{1}</option>".format(role.role_id, role.role));
+                console.log(role);
+                $("#add_edit_modal select[name=role_id]").append("<option value=\"{0}\">{1}</option>".format(role.role_id, role.role));
             });
         });
 
@@ -109,11 +78,24 @@
         $("#add_edit_modal button[data-type]").on("click", function () {
             var type = $(this).data("type");
             $.post("users/{0}".format(type), $("#add_edit_modal form").serialize(), function (response) {
-                $("#add_edit_modal").modal("hide");
                 var data = JSON.parse(response);
 
+                $("#add_edit_modal").modal("hide");
                 insert_user(data, type);
             });
+        });
+
+        $("table").on("click", "button[data-record]", function () {
+            var button = $("#add_edit_modal button[data-type]");
+            button.data("type", "edit");
+
+            var data = $(this).data();
+            $.each($("#add_edit_modal input, #add_edit_modal select"), function () {
+                var name = $(this).attr("name");
+                $(this).val(data[name]);
+            });
+
+            $("#add_edit_modal").modal("show");
         });
 
 
