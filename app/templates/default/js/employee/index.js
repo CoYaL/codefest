@@ -17,28 +17,15 @@
 
             tr.find("button[data-record]").data(employee);
         });
-
-        $("button[data-record]").click(function () {
-            var button = $("#add_edit_modal button[data-type]");
-            button.data("type", "edit");
-
-            var data = $(this).data();
-            $.each($("#add_edit_modal input, #add_edit_modal select"), function () {
-                var name = $(this).attr("name");
-                $(this).val(data[name]);
-            });
-
-            $("#add_edit_modal").modal("show");
-        });
     };
 
     var insert_employee = function (employee, type) {
         var html = $("script#template-employee-record").html();
 
-        var role = $("select[name=role]").find("option[value={0}]".format(employee.role)).html();
+        var user = $("select[name=user_id]").find("option[value={0}]".format(employee.user_id)).html();
 
         var template = html.replace(/\{\{ID\}\}/g, employee.employee_id || 0);
-        template = template.replace(/\{\{NAME\}\}/g, "{0} {1} {2}".format(employee.firstname, employee.middlename || "", employee.lastname));
+        template = template.replace(/\{\{NAME\}\}/g, user || "");
         template = template.replace(/\{\{FACTOR\}\}/g, employee.factor || "");
         template = template.replace(/\{\{DEPARTMENT\}\}/g, employee.department || "");
         template = template.replace(/\{\{STATE\}\}/g, employee.state || "");
@@ -52,20 +39,6 @@
             tr.replaceWith(template);
         }
         tr.find("button[data-record]").data(employee);
-
-        $("button[data-record]").click(function () {
-            var button = $("#add_edit_modal button[data-type]");
-            button.data("type", "edit");
-
-            var data = $(this).data();
-
-            $.each($("#add_edit_modal input, #add_edit_modal select"), function () {
-                var name = $(this).attr("name");
-                $(this).val(data[name]);
-            });
-
-            $("#add_edit_modal").modal("show");
-        });
     }
 
     $(document).ready(function () {
@@ -89,7 +62,6 @@
                 $("#add_edit_modal select[name=department]").append("<option value=\"{0}\">{0}</option>".format(department));
             });
         });
-
 
         $("tbody").on("click", ".delete_employee", function () {
             var button = $(this);
@@ -116,13 +88,25 @@
         $("#add_edit_modal button[data-type]").on("click", function () {
             var type = $(this).data("type");
             $.post("employees/{0}".format(type), $("#add_edit_modal form").serialize(), function (response) {
-                $("#add_edit_modal").modal("hide");
                 var data = JSON.parse(response);
-
+                console.log(data);
+                $("#add_edit_modal").modal("hide");
                 insert_employee(data, type);
             });
         });
 
+        $("table").on("click", "button[data-record]", function () {
+            var button = $("#add_edit_modal button[data-type]");
+            button.data("type", "edit");
+
+            var data = $(this).data();
+            $.each($("#add_edit_modal input, #add_edit_modal select"), function () {
+                var name = $(this).attr("name");
+                $(this).val(data[name]);
+            });
+
+            $("#add_edit_modal").modal("show");
+        });
 
     });
 })();

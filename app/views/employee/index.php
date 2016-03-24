@@ -80,7 +80,7 @@
             </button>
         </td>
         <td>
-            <button class="btn btn-danger btn-sm center-block" data-id="{{ID}}">
+            <button class="btn btn-danger btn-sm center-block delete_employee" data-id="{{ID}}">
                 <i class="fa fa-trash"></i>
             </button>
         </td>

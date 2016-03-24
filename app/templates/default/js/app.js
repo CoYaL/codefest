@@ -13,6 +13,8 @@ String.prototype.format = function () {
         $('.datepicker').each(function () {
             $(this).datepicker({
                 "format": "dd-mm-yyyy",
+            }).on('changeDate', function(){
+                $(this).datepicker('hide');
             });
         });
     });
