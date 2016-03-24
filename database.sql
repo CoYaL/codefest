@@ -203,24 +203,52 @@ CREATE TABLE IF NOT EXISTS `codefest`.`employee_project` (
   `employee_project_id` INT(11) NOT NULL AUTO_INCREMENT,
   `employee_id` INT(11) NOT NULL,
   `project_id` INT(11) NOT NULL,
-  `worktime` INT(11) NULL DEFAULT NULL,
-  `overtime` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`employee_project_id`),
   INDEX `fk_employee_id_idx` (`employee_id` ASC),
   INDEX `fk_project_id_idx` (`project_id` ASC),
   CONSTRAINT `fk_employee_id`
-    FOREIGN KEY (`employee_id`)
-    REFERENCES `codefest`.`employees` (`employee_id`)
+  FOREIGN KEY (`employee_id`)
+  REFERENCES `codefest`.`employees` (`employee_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_project_id`
-    FOREIGN KEY (`project_id`)
-    REFERENCES `codefest`.`projects` (`project_id`)
+  FOREIGN KEY (`project_id`)
+  REFERENCES `codefest`.`projects` (`project_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_unicode_ci;
+  ENGINE = InnoDB
+  AUTO_INCREMENT = 30
+  DEFAULT CHARACTER SET = utf8
+  COLLATE = utf8_unicode_ci;
+
+
+-- -----------------------------------------------------
+-- Table `codefest`.`workdays`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `codefest`.`workdays` ;
+
+CREATE TABLE IF NOT EXISTS `codefest`.`workdays` (
+  `workday_id` INT NOT NULL AUTO_INCREMENT,
+  `employee_id` INT NULL,
+  `project_id` INT NULL,
+  `day` DATE NOT NULL,
+  `worktime` INT NULL,
+  `overtime` INT NULL,
+  PRIMARY KEY (`workday_id`),
+  UNIQUE INDEX `Uniq` (`employee_id` ASC, `project_id` ASC, `day` ASC),
+  INDEX `proj_idx` (`project_id` ASC),
+  CONSTRAINT `emp`
+  FOREIGN KEY (`employee_id`)
+  REFERENCES `codefest`.`employees` (`employee_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `proj`
+  FOREIGN KEY (`project_id`)
+  REFERENCES `codefest`.`projects` (`project_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+  ENGINE = InnoDB;
+
 
 --
 -- dumping defaults for employee_projects
