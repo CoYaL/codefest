@@ -179,7 +179,7 @@ class Database extends PDO
         }
 
         $stmt->execute();
-        Debug::log($data, $where);
+
         return $stmt->rowCount();
     }
 
