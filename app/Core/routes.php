@@ -32,14 +32,20 @@ Router::any('users', 'Controllers\User@index');
 Router::post('users/add', 'Controllers\User@add');
 Router::post('users/edit', 'Controllers\User@edit');
 Router::post('users/delete', 'Controllers\User@delete');
-Router::any('users/getusers', 'Controllers\User@getUsers');
-Router::any('users/getroles', 'Controllers\User@getRoles');
+Router::post('users/getusers', 'Controllers\User@getUsers');
+Router::post('users/getroles', 'Controllers\User@getRoles');
 
 /* Management */
 Router::any('management', 'Controllers\Management@index');
 Router::any('management/leaveRequests', 'Controllers\Management@leaveRequests');
 Router::post('management/updateLeave', 'Controllers\Management@updateLeave');
 
+/* Employee */
+Router::any('employees', 'Controllers\Employee@index');
+Router::post('employees/getemployees', 'Controllers\Employee@getEmployees');
+Router::post('employees/getusers', 'Controllers\Employee@getUsers');
+Router::post('employees/getstates', 'Controllers\Employee@getStates');
+Router::post('employees/getdepartments', 'Controllers\Employee@getDepartments');
 
 /* Module routes. */
 $hooks = Hooks::get();

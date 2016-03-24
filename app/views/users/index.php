@@ -87,12 +87,12 @@
         <td>{{BIRTHDATE}}</td>
         <td>{{ROLE}}</td>
         <td>
-            <button class="btn btn-warning btn-sm" data-id="{{ID}}" data-record>
+            <button class="btn btn-warning btn-sm center-block" data-id="{{ID}}" data-record>
                 <i class="fa fa-list"></i>
             </button>
         </td>
         <td>
-            <button class="btn btn-danger btn-sm delete_user" data-id="{{ID}}">
+            <button class="btn btn-danger btn-sm center-block" data-id="{{ID}}">
                 <i class="fa fa-trash"></i>
             </button>
         </td>

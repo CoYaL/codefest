@@ -23,15 +23,9 @@
 
             var data = $(this).data();
 
-            $.each($("#add_edit_modal input"), function () {
+            $.each($("#add_edit_modal input, #add_edit_modal select"), function () {
                 var name = $(this).attr("name");
                 $(this).val(data[name]);
-            });
-
-            $.each($("#add_edit_modal select"), function () {
-                var name = $(this).attr("name");
-                console.log(data[name]);
-                $(this).find("option[value={0}]".format(data[name])).attr("selected", true);
             });
 
             $("#add_edit_modal").modal("show");
@@ -109,8 +103,7 @@
             $(this).find("button[data-type]").removeClass("btn-success").addClass("btn-primary").html("Edit User");
             $(this).find("select, input").each(function () {
                 $(this).val("");
-                $(this).find("option").attr("selected", false);
-            })
+            });
         });
 
         $("#add_edit_modal button[data-type]").on("click", function () {
