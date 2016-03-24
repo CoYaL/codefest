@@ -58,6 +58,7 @@ CREATE TABLE IF NOT EXISTS `codefest`.`users` (
   `lastname` VARCHAR(100) CHARACTER SET 'utf8' NOT NULL,
   `email` VARCHAR(255) CHARACTER SET 'utf8' NULL DEFAULT NULL,
   `date_of_birth` DATE NOT NULL,
+  `state` enum('actief','inactief') CHARACTER SET 'utf8' NOT NULL DEFAULT 'actief',
   PRIMARY KEY (`user_id`),
   UNIQUE INDEX `login_UNIQUE` (`username` ASC),
   INDEX `fk_role_id_idx` (`role_id` ASC),
