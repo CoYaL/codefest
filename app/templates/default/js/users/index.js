@@ -38,7 +38,7 @@
         });
     };
 
-    var insert_user = function (user) {
+    var insert_user = function (user, type) {
         var html = $("script#template-user-record").html();
 
         var role = $("select[name=role]").find("option[value={0}]".format(user.role)).html();
@@ -47,10 +47,16 @@
         template = template.replace(/\{\{NAME\}\}/g, "{0} {1} {2}".format(user.firstname, user.middlename, user.lastname));
         template = template.replace(/\{\{EMAIL\}\}/g, user.email || "");
         template = template.replace(/\{\{BIRTHDATE\}\}/g, user.date_of_birth || "");
-        template = template.replace(/\{\{ROLE\}\}/g, role || "")
-        $("table tbody").append(template);
-        var tr = $("table tbody tr:last");
+        template = template.replace(/\{\{ROLE\}\}/g, role || "");
 
+        var tr = null;
+        if (type === 'add') {
+            $("table tbody").append(template);
+            tr = $("table tbody tr:last");
+        } else {
+            tr = $("tbody button[data-id={0}]".format(user.user_id)).closest("tr");
+            tr.replaceWith(template);
+        }
         tr.find("button[data-record]").data(user);
 
         $("button[data-record]").click(function () {
@@ -82,6 +88,13 @@
             });
         });
 
+        $("tbody").on("click", ".delete_user", function () {
+            var button = $(this);
+            $.post("users/delete", {"user_id": $(this).data("id")}, function (data) {
+                button.closest("tr").remove();
+            });
+        });
+
         $("#add_user").click(function () {
             var button = $("#add_edit_modal button[data-type]");
             button.removeClass("btn-primary").addClass("btn-success").html("Add User").data("type", "add");
@@ -99,11 +112,15 @@
         });
 
         $("#add_edit_modal button[data-type]").on("click", function () {
-            $.post("users/{0}".format($(this).data("type")), $("#add_edit_modal form").serialize(), function (response) {
+            var type = $(this).data("type");
+            $.post("users/{0}".format(type), $("#add_edit_modal form").serialize(), function (response) {
                 $("#add_edit_modal").modal("hide");
                 var data = JSON.parse(response);
-                insert_user(data);
+
+                insert_user(data, type);
             });
         });
+
+
     });
 })();
