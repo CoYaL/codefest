@@ -43,7 +43,7 @@ class User extends Controller
         $lastname = $_POST['lastname'];
         $email = $_POST['email'];
         $dateOfBirth = $date->format("Y-m-d");
-        $role = $_POST['role'];
+        $role = $_POST['role_id'];
 
         $user = [
             'username' => $username,
@@ -70,7 +70,7 @@ class User extends Controller
         $lastname = $_POST['lastname'];
         $email = $_POST['email'];
         $dateOfBirth = $date->format("Y-m-d");
-        $role = $_POST['role'];
+        $role = $_POST['role_id'];
 
         $user = [
             'username' => $username,

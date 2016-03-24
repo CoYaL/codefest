@@ -36,58 +36,42 @@ class Employee extends Controller
 
     public function add()
     {
-        $date = date_create_from_format('d-m-Y', $_POST['date_of_birth']);
-        $username = $_POST['username'];
-        $firstname = $_POST['firstname'];
-        $middlename = $_POST['middlename'];
-        $lastname = $_POST['lastname'];
-        $email = $_POST['email'];
-        $dateOfBirth = $date->format("Y-m-d");
-        $role = $_POST['role'];
+        $user_id = $_POST['user_id'];
+        $factor = $_POST['factor'];
+        $department = $_POST['department'];
+        $state = $_POST['state'];
 
         $user = [
-            'username' => $username,
-            'firstname' => $firstname,
-            'middlename' => $middlename,
-            'lastname' => $lastname,
-            'email' => $email,
-            'date_of_birth' => $dateOfBirth,
-            'role_id' => $role,
+            'user_id' => $user_id,
+            'factor' => $factor,
+            'department' => $department,
+            'state' => $state,
         ];
-        $_POST['user_id'] = $this->model->create($user);
-        $_POST['date_of_birth'] = date("d-m-Y", $_POST['date_of_birth']);
+        $_POST['employee_id'] = $this->model->create($user);
 
         print json_encode($_POST);
     }
 
     public function edit()
     {
+        $employee_id = $_POST['employee_id'];
         $user_id = $_POST['user_id'];
-        $date = date_create_from_format('d-m-Y', $_POST['date_of_birth']);
-        $username = $_POST['username'];
-        $firstname = $_POST['firstname'];
-        $middlename = $_POST['middlename'];
-        $lastname = $_POST['lastname'];
-        $email = $_POST['email'];
-        $dateOfBirth = $date->format("Y-m-d");
-        $role = $_POST['role'];
+        $factor = $_POST['factor'];
+        $department = $_POST['department'];
+        $state = $_POST['state'];
 
-        $user = [
-            'username' => $username,
-            'firstname' => $firstname,
-            'middlename' => $middlename,
-            'lastname' => $lastname,
-            'email' => $email,
-            'date_of_birth' => $dateOfBirth,
-            'role_id' => $role,
+        $employee = [
+            'user_id' => $user_id,
+            'factor' => $factor,
+            'department' => $department,
+            'state' => $state,
         ];
 
         $where = [
-            'user_id' => $user_id,
+            'employee_id' => $employee_id,
         ];
 
-        $this->model->update($user, $where);
-        $_POST['date_of_birth'] = date("d-m-Y", $_POST['date_of_birth']);
+        $this->model->update($employee, $where);
 
         print json_encode($_POST);
     }
@@ -99,7 +83,7 @@ class Employee extends Controller
         ];
 
         $where = [
-            'user_id' => $_POST['user_id'],
+            'employee_id' => $_POST['employee_id'],
         ];
 
         $this->model->update($user, $where);

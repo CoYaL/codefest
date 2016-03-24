@@ -68,7 +68,7 @@
                     </div>
                     <div class="form-group">
                         <label for="start_date">Rol</label>
-                        <select type="text" class="form-control" name="role" required></select>
+                        <select type="text" class="form-control" name="role_id" required></select>
                     </div>
                 </form>
             </div>
@@ -92,7 +92,7 @@
             </button>
         </td>
         <td>
-            <button class="btn btn-danger btn-sm center-block" data-id="{{ID}}">
+            <button class="btn btn-danger btn-sm center-block delete_user" data-id="{{ID}}">
                 <i class="fa fa-trash"></i>
             </button>
         </td>
