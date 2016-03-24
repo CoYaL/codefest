@@ -10,6 +10,8 @@ namespace Controllers;
 
 use Core\Controller;
 use Core\View;
+use Helpers\Date;
+use Helpers\Debug;
 
 class Holiday extends Controller
 {
@@ -39,16 +41,51 @@ class Holiday extends Controller
 
     public function add()
     {
+        $startdate = date('Y-m-d', strtotime($_POST['start_date']));
+        $enddate = date('Y-m-d', strtotime($_POST['end_date']));
 
+        $description = $_POST['description'];
+        $payment_multiplier = $_POST['payment_multiplier'];
+
+        $holiday = [
+            'start_date' => $startdate,
+            'end_date' => $enddate,
+            'description' => $description,
+            'payment_multiplier' => $payment_multiplier,
+        ];
+        $_POST['holiday_id'] = $this->model->create($holiday);
+
+        print json_encode($_POST);
     }
 
     public function update()
     {
+        $holidayId = $_POST['holiday_id'];
+        $startdate = date('Y-m-d', strtotime($_POST['start_date']));
+        $enddate = date('Y-m-d', strtotime($_POST['end_date']));
+
+        $description = $_POST['description'];
+        $payment_multiplier = $_POST['payment_multiplier'];
+
+        $holiday = [
+            'start_date' => $startdate,
+            'end_date' => $enddate,
+            'description' => $description,
+            'payment_multiplier' => $payment_multiplier,
+        ];
+
+        $where = [
+            'holiday_id' => $holidayId,
+        ];
+        $this->model->update($holiday, $where);
+
+        print json_encode($_POST);
 
     }
 
     public function delete()
     {
-
+        $holidayId = $_POST['holiday_id'];
+        $this->model->delete($holidayId);
     }
 }
