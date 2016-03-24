@@ -39,7 +39,7 @@ class Leave extends Controller
         $data['javascript'] = ['leave/index'];
 
         $settings = $this->model->getThreshold();
-        $data['threshold'] = date('d-m-Y', mktime(0, 0, 0, date('m'), date('d')+(int)$settings->vacation_threshold, date('Y')));
+        $data['threshold'] = date('d-m-Y', mktime(0, 0, 0, date('m'), (date('d')+$settings->vacation_threshold), date('Y')));
         Session::set('threshold', $data['threshold']);
         View::renderTemplate('header', $data);
         View::render('leave/index', $data);
