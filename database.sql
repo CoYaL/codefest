@@ -258,9 +258,9 @@ INSERT INTO `workdays` (`workday_id`, `employee_id`, `project_id`, `day`, `workt
 INSERT INTO `workdays` (`workday_id`, `employee_id`, `project_id`, `day`, `worktime`, `overtime`) VALUES (NULL, '6', '3', '2016-03-28', '7', '1');
 INSERT INTO `workdays` (`workday_id`, `employee_id`, `project_id`, `day`, `worktime`, `overtime`) VALUES (NULL, '6', '3', '2016-03-29', '8', '2');
 INSERT INTO `workdays` (`workday_id`, `employee_id`, `project_id`, `day`, `worktime`, `overtime`) VALUES (NULL, '6', '3', '2016-03-30', '10', '2');
-INSERT INTO `workdays` (`workday_id`, `employee_id`, `project_id`, `day`, `worktime`, `overtime`) VALUES (NULL, '6', '1', '2016-03-25', '5', '7');
-INSERT INTO `workdays` (`workday_id`, `employee_id`, `project_id`, `day`, `worktime`, `overtime`) VALUES (NULL, '6', '1', '2016-03-25', '10', '2');
-INSERT INTO `workdays` (`workday_id`, `employee_id`, `project_id`, `day`, `worktime`, `overtime`) VALUES (NULL, '6', '1', '2016-03-25', '10', '2');
+INSERT INTO `workdays` (`workday_id`, `employee_id`, `project_id`, `day`, `worktime`, `overtime`) VALUES (NULL, '6', '1', '2016-03-10', '5', '7');
+INSERT INTO `workdays` (`workday_id`, `employee_id`, `project_id`, `day`, `worktime`, `overtime`) VALUES (NULL, '6', '1', '2016-03-11', '10', '2');
+INSERT INTO `workdays` (`workday_id`, `employee_id`, `project_id`, `day`, `worktime`, `overtime`) VALUES (NULL, '6', '1', '2016-03-12', '10', '2');
 
 --
 -- dumping defaults for employee_projects
