@@ -10,6 +10,7 @@ namespace Models;
 
 
 use Core\Model;
+use Helpers\Debug;
 
 class Hours extends Model
 {
@@ -29,6 +30,20 @@ class Hours extends Model
 												ON e_p.employee_id = e.employee_id
 									WHERE e.user_id = :userID", [':userID'=>$userID ]);
 		return $data;
+	}
+
+	public function registerHours($userID, $projectID, $overtime = 0, $worktime = 0)
+	{
+		$employeeID = $this->db->select("
+		SELECT e.employee_id
+		FROM employees as e
+		WHERE e.user_id = :userID",[':userID' => $userID])[0]->employee_id;
+		//cast employeeID to int
+		$employeeID = intval($employeeID);
+		$result = $this->db->update('employee_project', ['overtime' => $overtime, 'worktime' => $worktime],
+			['employee_id' => $employeeID, 'project_id' => $projectID]);
+		Debug::log($result);
+		return $result;
 	}
 
 
