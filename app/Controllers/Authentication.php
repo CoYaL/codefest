@@ -65,6 +65,7 @@ class Authentication extends Controller
 					: $nameObj->firstname.' '.$nameObj->lastname;
 				Session::set('fullName',$fullName);
                 Session::set('userID',$userId);
+                Session::set('role',$this->model->getUser($username)->role);
                 url::redirect('leave');
             }
             else{
