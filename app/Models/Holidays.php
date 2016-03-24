@@ -37,14 +37,14 @@ class Holidays extends Model
     }
     public function create($data = [])
     {
-        $userId = $this->db->insert('holidays', $data);
-        return $userId;
+        $holidayId = $this->db->insert('holidays', $data);
+        return $holidayId;
     }
 
 
     public function update($data, $where)
     {
-        $this->db->update('holidays',$data,$where);
+        $this->db->update('holidays', $data, $where);
     }
 
     public function delete($holidayId)

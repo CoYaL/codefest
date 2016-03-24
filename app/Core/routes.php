@@ -56,7 +56,7 @@ Router::any('holidays', 'Controllers\Holiday@index');
 Router::any('holidays/getholidays', 'Controllers\Holiday@getHolidays');
 Router::post('holidays/add', 'Controllers\Holiday@add');
 Router::post('holidays/delete', 'Controllers\Holiday@delete');
-Router::post('holidays/update', 'Controllers\Holiday@update');
+Router::post('holidays/edit', 'Controllers\Holiday@update');
 
 /* Module routes. */
 $hooks = Hooks::get();

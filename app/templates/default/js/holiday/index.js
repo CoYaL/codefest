@@ -20,31 +20,16 @@
 
             tr.find("button[data-record]").data(holiday);
         });
-
-        $("button[data-record]").click(function () {
-            var button = $("#add_edit_modal button[data-type]");
-            button.data("type", "edit");
-
-            var data = $(this).data();
-            $.each($("#add_edit_modal input, #add_edit_modal select"), function () {
-                var name = $(this).attr("name");
-                $(this).val(data[name]);
-            });
-
-            $("#add_edit_modal").modal("show");
-        });
     };
 
     var insert_holiday = function (holiday, type) {
         var html = $("script#template-holiday-record").html();
 
-        var role = $("select[name=role]").find("option[value={0}]".format(holiday.role)).html();
-
         var template = html.replace(/\{\{ID\}\}/g, holiday.holiday_id || 0);
-        template = template.replace(/\{\{NAME\}\}/g, "{0} {1} {2}".format(holiday.firstname, holiday.middlename || "", holiday.lastname));
-        template = template.replace(/\{\{FACTOR\}\}/g, holiday.factor || "");
-        template = template.replace(/\{\{DEPARTMENT\}\}/g, holiday.department || "");
-        template = template.replace(/\{\{STATE\}\}/g, holiday.state || "");
+        template = template.replace(/\{\{DESCRIPTION\}\}/g, holiday.description || "");
+        template = template.replace(/\{\{STARTDATE\}\}/g, holiday.start_date || "");
+        template = template.replace(/\{\{ENDDATE\}\}/g, holiday.end_date || "");
+        template = template.replace(/\{\{PAYMENT_MULTIPLIER\}\}/g, holiday.payment_multiplier || "");
 
         var tr = null;
         if (type === 'add') {
@@ -56,19 +41,7 @@
         }
         tr.find("button[data-record]").data(holiday);
 
-        $("button[data-record]").click(function () {
-            var button = $("#add_edit_modal button[data-type]");
-            button.data("type", "edit");
 
-            var data = $(this).data();
-
-            $.each($("#add_edit_modal input, #add_edit_modal select"), function () {
-                var name = $(this).attr("name");
-                $(this).val(data[name]);
-            });
-
-            $("#add_edit_modal").modal("show");
-        });
     };
 
     $(document).ready(function () {
@@ -88,7 +61,7 @@
             $("#add_edit_modal").modal("show");
         });
 
-        $("#add_edit_modal").on("hide.bs.modal", function () {
+        $("#add_edit_modal").on("hidden.bs.modal", function () {
             $(this).find(".modal-title").html("Edit holiday");
             $(this).find("button[data-type]").removeClass("btn-success").addClass("btn-primary").html("Edit holiday");
             $(this).find("select, input").each(function () {
@@ -104,6 +77,20 @@
 
                 insert_holiday(data, type);
             });
+        });
+
+        $("table").on("click", "button[data-record]", function () {
+            var button = $("#add_edit_modal button[data-type]");
+            button.data("type", "edit");
+
+            var data = $(this).data();
+
+            $.each($("#add_edit_modal input, #add_edit_modal select"), function () {
+                var name = $(this).attr("name");
+                $(this).val(data[name]);
+            });
+
+            $("#add_edit_modal").modal("show");
         });
 
 

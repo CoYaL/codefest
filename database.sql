@@ -203,57 +203,85 @@ CREATE TABLE IF NOT EXISTS `codefest`.`employee_project` (
   `employee_project_id` INT(11) NOT NULL AUTO_INCREMENT,
   `employee_id` INT(11) NOT NULL,
   `project_id` INT(11) NOT NULL,
-  `worktime` INT(11) NULL DEFAULT NULL,
-  `overtime` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`employee_project_id`),
   INDEX `fk_employee_id_idx` (`employee_id` ASC),
   INDEX `fk_project_id_idx` (`project_id` ASC),
   CONSTRAINT `fk_employee_id`
-    FOREIGN KEY (`employee_id`)
-    REFERENCES `codefest`.`employees` (`employee_id`)
+  FOREIGN KEY (`employee_id`)
+  REFERENCES `codefest`.`employees` (`employee_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_project_id`
-    FOREIGN KEY (`project_id`)
-    REFERENCES `codefest`.`projects` (`project_id`)
+  FOREIGN KEY (`project_id`)
+  REFERENCES `codefest`.`projects` (`project_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_unicode_ci;
+  ENGINE = InnoDB
+  AUTO_INCREMENT = 30
+  DEFAULT CHARACTER SET = utf8
+  COLLATE = utf8_unicode_ci;
+
+
+-- -----------------------------------------------------
+-- Table `codefest`.`workdays`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `codefest`.`workdays` ;
+
+CREATE TABLE IF NOT EXISTS `codefest`.`workdays` (
+  `workday_id` INT NOT NULL AUTO_INCREMENT,
+  `employee_id` INT NULL,
+  `project_id` INT NULL,
+  `day` DATE NOT NULL,
+  `worktime` INT NULL,
+  `overtime` INT NULL,
+  PRIMARY KEY (`workday_id`),
+  UNIQUE INDEX `Uniq` (`employee_id` ASC, `project_id` ASC, `day` ASC),
+  INDEX `proj_idx` (`project_id` ASC),
+  CONSTRAINT `emp`
+  FOREIGN KEY (`employee_id`)
+  REFERENCES `codefest`.`employees` (`employee_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `proj`
+  FOREIGN KEY (`project_id`)
+  REFERENCES `codefest`.`projects` (`project_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+  ENGINE = InnoDB;
+
 
 --
 -- dumping defaults for employee_projects
 --
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '1', '2', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '2', '1', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '3', '3', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '4', '1', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '5', '1', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '6', '2', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '7', '2', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '8', '3', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '9', '2', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '10', '2', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '11', '1', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '12', '1', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '13', '3', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '14', '3', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '15', '1', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '16', '3', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '17', '3', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '18', '3', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '19', '1', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '20', '1', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '21', '2', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '22', '1', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '23', '2', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '24', '3', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '25', '2', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '26', '1', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '27', '3', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '28', '3', NULL, NULL);
-INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '29', '2', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '1', '2');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '2', '1');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '3', '3');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '4', '1');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '5', '1');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '6', '2');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '7', '2');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '8', '3');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '9', '2');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '10', '2');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '11', '1');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '12', '1');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '13', '3');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '14', '3');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '15', '1');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '16', '3');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '17', '3');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '18', '3');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '19', '1');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '20', '1');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '21', '2');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '22', '1');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '23', '2');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '24', '3');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '25', '2');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '26', '1');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '27', '3');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '28', '3');
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`) VALUES (NULL, '29', '2');
 
 
 -- -----------------------------------------------------
@@ -340,7 +368,7 @@ CREATE TABLE IF NOT EXISTS `codefest`.`leave` (
   `start_date` TIMESTAMP NULL DEFAULT NULL,
   `end_date` TIMESTAMP NULL DEFAULT NULL,
   `reason` ENUM('ziek', 'vakantie', 'overig') CHARACTER SET 'utf8' NOT NULL DEFAULT 'overig',
-  `state` ENUM('geaccepteerd', 'afgewezen', 'in behandeling') CHARACTER SET 'utf8' NOT NULL DEFAULT 'in behandeling',
+  `state` ENUM('accepted', 'denied', 'in review') CHARACTER SET 'utf8' NOT NULL DEFAULT 'in review',
   PRIMARY KEY (`leave_id`),
   INDEX `fk_employee_id_idx` (`employee_id` ASC),
   CONSTRAINT `fk_employee_id2`
