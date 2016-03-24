@@ -45,4 +45,15 @@ class Authentication extends Model
 
         return $data[0];
     }
+
+    public function getUser($username)
+    {
+        $data = $this->db->select("
+            SELECT *
+            FROM users
+            WHERE username = :username",
+            [':username' => $username]);
+
+        return $data[0];
+    }
 }
