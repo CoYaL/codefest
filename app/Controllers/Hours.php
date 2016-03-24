@@ -66,7 +66,7 @@ class Hours extends Controller
 		$result = $this->model->registerHours($userID, $projectID, $overtime, $worktime);
 		var_dump($result);
 		if($result){
-			Url::redirect('/hours/registration');
+			Url::redirect('hours/registration');
 		}
 	}
 

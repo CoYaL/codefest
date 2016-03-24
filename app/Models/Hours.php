@@ -42,7 +42,7 @@ class Hours extends Model
 		$employeeID = intval($employeeID);
 		$result = $this->db->update('employee_project', ['overtime' => $overtime, 'worktime' => $worktime],
 			['employee_id' => $employeeID, 'project_id' => $projectID]);
-
+		Debug::log($result);
 		return $result;
 	}
 
