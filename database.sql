@@ -221,6 +221,39 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
 
+--
+-- dumping defaults for employee_projects
+--
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '1', '2', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '2', '1', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '3', '3', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '4', '1', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '5', '1', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '6', '2', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '7', '2', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '8', '3', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '9', '2', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '10', '2', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '11', '1', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '12', '1', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '13', '3', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '14', '3', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '15', '1', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '16', '3', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '17', '3', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '18', '3', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '19', '1', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '20', '1', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '21', '2', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '22', '1', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '23', '2', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '24', '3', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '25', '2', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '26', '1', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '27', '3', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '28', '3', NULL, NULL);
+INSERT INTO `employee_project` (`employee_project_id`, `employee_id`, `project_id`, `worktime`, `overtime`) VALUES (NULL, '29', '2', NULL, NULL);
+
 
 -- -----------------------------------------------------
 -- Table `codefest`.`global_settings`
