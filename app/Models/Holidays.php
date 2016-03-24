@@ -26,14 +26,15 @@ class Holidays extends Model
         $end = (!empty($end)) ? $end : date('Y-m-d', mktime(0, 0, 0, 31, 12, date('Y')));
 
         $data = $this->db->select("
-            SELECT *
+            SELECT *,
+            DATE_FORMAT(start_date, '%d-%m-%Y') as start_date,
+            DATE_FORMAT(end_date, '%d-%m-%Y') as end_date
             FROM holidays
             WHERE start_date >= :start AND end_date <= :end",
             array(':start'=>$start, ':end'=>$end));
 
         return $data;
     }
-
     public function create($data = [])
     {
         $userId = $this->db->insert('holidays', $data);
