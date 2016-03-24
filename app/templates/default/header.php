@@ -54,17 +54,75 @@ $hooks->run('afterBody');
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div class="container">
-                <ul class="nav navbar-nav">
-                    <li><a href="/leave">Verlof</a></li>
-                    <li><a href="/hours/registration">Uren</a></li>
-                    <li><a href="/hours/overview">Overzicht</a></li>
-                    <li><a href="/users">Gebruikers</a></li>
-                    <li><a href="/employees">Medewerkers</a></li>
-                    <li><a href="/management/leaveRequests">Accorderen</a></li>
-                    <li><a href="/holidays">Feestdagen</a></li>
-                    <li><a href="/users">Gebruikers</a></li>
+                <ul class="nav navbar-nav <?php if(\Helpers\Session::get('role') === null) echo 'hidden';?>">
+                    <li <?php
+                    switch(\Helpers\Session::get('role')){
+                        case 1:
+                        case 2:
+                        case 4:
+                        case 5:
+                            echo 'class="hidden"';
+                            break;
+
+                    }?>><a href="/leave">Verlof</a></li>
+                    <li <?php
+                    switch(\Helpers\Session::get('role')){
+                        case 1:
+                        case 2:
+                        case 5:
+                            echo 'class="hidden"';
+                            break;
+
+                    }?>><a href="/hours/registration">Uren</a></li>
+                    <li <?php
+                    switch(\Helpers\Session::get('role')){
+                        case 1:
+                        case 2:
+                        case 4:
+                        case 5:
+                            echo 'class="hidden"';
+                            break;
+
+                    }?>><a href="/hours/overview">Overzicht</a></li>
+                    <li <?php
+                    switch(\Helpers\Session::get('role')){
+                        case 3:
+                        case 5:
+                            echo 'class="hidden"';
+                            break;
+
+                    }?>><a href="/users">Gebruikers</a></li>
+                    <li <?php
+                    switch(\Helpers\Session::get('role')){
+                        case 1:
+                        case 2:
+                        case 3:
+                            echo 'class="hidden"';
+                            break;
+
+                    }?>><a href="/employees">Medewerkers</a></li>
+                    <li <?php
+                    switch(\Helpers\Session::get('role')){
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                            echo 'class="hidden"';
+                            break;
+
+                    }?>><a href="/management/leaveRequests">Accorderen</a></li>
+                    <li <?php
+                    switch(\Helpers\Session::get('role')){
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 5:
+                            echo 'class="hidden"';
+                            break;
+
+                    }?>><a href="/holidays">Feestdagen</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right <?php if(\Helpers\Session::get('role') === null) echo 'hidden';?>">
                     <li><a href="/authentication/logout">Uitloggen</a></li>
                 </ul>
             </div>
