@@ -39,9 +39,9 @@
             </div>
             <div class="modal-body">
                 <form >
-                    <input type="hidden" name="user_id">
+                    <input type="hidden" name="holiday_id">
                     <div class="form-group">
-                        <label for="username">Naam</label>
+                        <label for="description">Naam</label>
                         <input type="text" class="form-control" name="description">
                     </div>
                     <div class="form-group">
