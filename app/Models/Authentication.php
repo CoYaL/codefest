@@ -35,4 +35,14 @@ class Authentication extends Model
         return $data[0];
     }
 
+    public function getFullName($username)
+    {
+        $data = $this->db->select("
+            SELECT firstname, middlename, lastname
+            FROM users
+            WHERE username = :username",
+                [':username' => $username]);
+
+        return $data[0];
+    }
 }
