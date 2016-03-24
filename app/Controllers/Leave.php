@@ -12,6 +12,7 @@ namespace Controllers;
 
 use Core\Controller;
 use Core\View;
+use Helpers\Session;
 use Helpers\Url;
 
 /**
@@ -37,11 +38,11 @@ class Leave extends Controller
         $data['title'] = 'Verlof aanvragen';
         $data['javascript'] = ['leave/index'];
 
-        $threshold = 5;
-        $threshold = date('d-m-Y', mktime(0, 0, 0,date('m'), date('d')+$threshold), date('Y'));
-
+        $settings = $this->model->getThreshold();
+        $data['threshold'] = date('d-m-Y', mktime(0, 0, 0, date('m'), (date('d')+$settings->vacation_threshold), date('Y')));
+        Session::set('threshold', $data['threshold']);
         View::renderTemplate('header', $data);
-        View::render('leave/index', $data, $threshold);
+        View::render('leave/index', $data);
         View::renderTemplate('footer', $data);
     }
 

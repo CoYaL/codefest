@@ -396,16 +396,16 @@ COLLATE = utf8_unicode_ci;
 -- dump default
 --
 
-INSERT INTO `leave` (`leave_id`, `employee_id`, `start_date`, `end_date`, `reason`, `state`) VALUES (NULL, '6', '2016-03-01 00:00:00', '2016-03-03 00:00:00', 'ziek', 'in review');
-INSERT INTO `leave` (`leave_id`, `employee_id`, `start_date`, `end_date`, `reason`, `state`) VALUES (NULL, '6', '2016-03-04 00:00:00', '2016-03-11 00:00:00', 'vakantie', 'in review');
-INSERT INTO `leave` (`leave_id`, `employee_id`, `start_date`, `end_date`, `reason`, `state`) VALUES (NULL, '6', '2016-03-01 00:00:00', '2016-03-03 00:00:00', 'ziek', 'in review');
-INSERT INTO `leave` (`leave_id`, `employee_id`, `start_date`, `end_date`, `reason`, `state`) VALUES (NULL, '6', '2016-03-04 00:00:00', '2016-03-11 00:00:00', 'vakantie', 'in review');
-INSERT INTO `leave` (`leave_id`, `employee_id`, `start_date`, `end_date`, `reason`, `state`) VALUES (NULL, '6', '2016-03-01 00:00:00', '2016-03-03 00:00:00', 'ziek', 'in review');
-INSERT INTO `leave` (`leave_id`, `employee_id`, `start_date`, `end_date`, `reason`, `state`) VALUES (NULL, '6', '2016-03-04 00:00:00', '2016-03-11 00:00:00', 'vakantie', 'in review');
-INSERT INTO `leave` (`leave_id`, `employee_id`, `start_date`, `end_date`, `reason`, `state`) VALUES (NULL, '6', '2016-03-01 00:00:00', '2016-03-03 00:00:00', 'ziek', 'in review');
-INSERT INTO `leave` (`leave_id`, `employee_id`, `start_date`, `end_date`, `reason`, `state`) VALUES (NULL, '6', '2016-03-04 00:00:00', '2016-03-11 00:00:00', 'vakantie', 'in review');
-INSERT INTO `leave` (`leave_id`, `employee_id`, `start_date`, `end_date`, `reason`, `state`) VALUES (NULL, '6', '2016-03-01 00:00:00', '2016-03-03 00:00:00', 'ziek', 'in review');
-INSERT INTO `leave` (`leave_id`, `employee_id`, `start_date`, `end_date`, `reason`, `state`) VALUES (NULL, '6', '2016-03-04 00:00:00', '2016-03-11 00:00:00', 'vakantie', 'in review');
+INSERT INTO `leave` (`leave_id`, `employee_id`, `start_date`, `end_date`, `reason`, `state`) VALUES (NULL, '6', '2016-03-01 00:00:00', '2016-03-03 00:00:00', 'ziek', 'in behandeling');
+INSERT INTO `leave` (`leave_id`, `employee_id`, `start_date`, `end_date`, `reason`, `state`) VALUES (NULL, '6', '2016-03-04 00:00:00', '2016-03-11 00:00:00', 'vakantie', 'in behandeling');
+INSERT INTO `leave` (`leave_id`, `employee_id`, `start_date`, `end_date`, `reason`, `state`) VALUES (NULL, '6', '2016-03-01 00:00:00', '2016-03-03 00:00:00', 'ziek', 'in behandeling');
+INSERT INTO `leave` (`leave_id`, `employee_id`, `start_date`, `end_date`, `reason`, `state`) VALUES (NULL, '6', '2016-03-04 00:00:00', '2016-03-11 00:00:00', 'vakantie', 'in behandeling');
+INSERT INTO `leave` (`leave_id`, `employee_id`, `start_date`, `end_date`, `reason`, `state`) VALUES (NULL, '6', '2016-03-01 00:00:00', '2016-03-03 00:00:00', 'ziek', 'in behandeling');
+INSERT INTO `leave` (`leave_id`, `employee_id`, `start_date`, `end_date`, `reason`, `state`) VALUES (NULL, '6', '2016-03-04 00:00:00', '2016-03-11 00:00:00', 'vakantie', 'in behandeling');
+INSERT INTO `leave` (`leave_id`, `employee_id`, `start_date`, `end_date`, `reason`, `state`) VALUES (NULL, '6', '2016-03-01 00:00:00', '2016-03-03 00:00:00', 'ziek', 'in behandeling');
+INSERT INTO `leave` (`leave_id`, `employee_id`, `start_date`, `end_date`, `reason`, `state`) VALUES (NULL, '6', '2016-03-04 00:00:00', '2016-03-11 00:00:00', 'vakantie', 'in behandeling');
+INSERT INTO `leave` (`leave_id`, `employee_id`, `start_date`, `end_date`, `reason`, `state`) VALUES (NULL, '6', '2016-03-01 00:00:00', '2016-03-03 00:00:00', 'ziek', 'in behandeling');
+INSERT INTO `leave` (`leave_id`, `employee_id`, `start_date`, `end_date`, `reason`, `state`) VALUES (NULL, '6', '2016-03-04 00:00:00', '2016-03-11 00:00:00', 'vakantie', 'in behandeling');
 
 
 -- -----------------------------------------------------

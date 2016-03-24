@@ -6,7 +6,8 @@
         $("input[name=leave_type]").change(function(){
             $("#end_date").removeAttr("required");
             if($("#leave_holiday").prop("checked") == true){
-                console.log('TEST');
+                console.log(threshold);
+                $("#start_date").val(threshold);
                 $("#end_date").attr('required',true);
             }
         });

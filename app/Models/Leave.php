@@ -33,4 +33,13 @@ class Leave extends Model
 
 		return $result;
 	}
+
+	public function getThreshold()
+	{
+		$data = $this->db->select("
+			SELECT *
+			FROM global_settings
+			WHERE year=:year",[':year'=>date('Y')]);
+		return $data[0];
+	}
 }

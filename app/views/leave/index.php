@@ -8,7 +8,8 @@
 ?>
 <div class="panel panel-default">
     <div class="panel-heading">
-        <?php echo $data['title'] ?>
+        <?php echo $data['title'] ;?>
+        <?php echo '<script>var threshold ="'.$data['threshold'].'";</script>'; ?>
     </div>
     <div class="panel-body">
         <form class="col-md-6" method="POST">
@@ -20,7 +21,7 @@
             </label>
             <div class="form-group">
                 <label for="start_date">Van</label>
-                <input type="text" class="form-control datepicker" name="start_date" id="start_date" value="<?php echo $data['date_today'] ?>" required>
+                <input type="text" class="form-control datepicker" name="start_date" id="start_date" value="<?php echo $data['threshold'] ?>" required>
             </div>
             <div class="form-group">
                 <label for="end_date">Tot</label>
