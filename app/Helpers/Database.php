@@ -61,6 +61,7 @@ class Database extends PDO
             // Specifiying charset in DSN fixes the charset problem perfectly!
             $instance = new self("$type:host=$host;dbname=$name;charset=utf8", $user, $pass);
             $instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $instance->setAttribute(PDO::MYSQL_ATTR_FOUND_ROWS, true);
 
             // Setting Database into $instances to avoid duplication
             self::$instances[$id] = $instance;
