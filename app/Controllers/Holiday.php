@@ -24,9 +24,31 @@ class Holiday extends Controller
     public function index()
     {
         $data['title'] = 'Holidays';
+        $data['javascript'] = ['holiday/index'];
 
         View::renderTemplate('header', $data);
         View::render('holidays/index', $data);
         View::renderTemplate('footer', $data);
+    }
+
+    public function getHolidays()
+    {
+        $data = $this->model->getHolidays();
+        print json_encode($data);
+    }
+
+    public function add()
+    {
+
+    }
+
+    public function update()
+    {
+
+    }
+
+    public function delete()
+    {
+
     }
 }
