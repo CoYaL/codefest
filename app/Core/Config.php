@@ -29,7 +29,7 @@ class Config
         /*
          * Define relative base path.
          */
-        define('DIR', '/');
+        define('DIR', 'http://localhost/');
         /*
          * Set default controller and method for legacy calls.
          */
