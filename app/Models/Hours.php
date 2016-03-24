@@ -72,7 +72,7 @@ class Hours extends Model
         $result['work'] = $this->db->select($query);
 
         $query = sprintf("
-            SELECT SUM(DATEDIFF(l.start_date, COALESCE(l.end_date,NOW()))) as sick
+            SELECT SUM(DATEDIFF(l.end_date, COALESCE(l.start_date,NOW()))) as sick
             FROM employees as e 
             JOIN `leave`  as l 
               ON e.employee_id = l.employee_id
@@ -83,7 +83,7 @@ class Hours extends Model
         $result['sick'] = $this->db->select($query);
 
         $query = sprintf("
-            SELECT SUM(DATEDIFF(l.start_date, COALESCE(l.end_date,NOW()))) as holiday
+            SELECT SUM(DATEDIFF(l.end_date, COALESCE(l.start_date,NOW()))) as holiday
             FROM employees as e 
             JOIN `leave` as l 
               ON e.employee_id = l.employee_id
