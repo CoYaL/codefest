@@ -24,6 +24,7 @@ Router::any('authentication/logout', 'Controllers\Authentication@logout');
 
 /* Hours */
 Router::any('hours', 'Controllers\Hours@index');
+Router::post('hours/gethours', 'Controllers\Hours@getHours');
 Router::any('hours/registration', 'Controllers\Hours@registration');
 Router::any('hours/overview', 'Controllers\Hours@overview');
 Router::post('hours/submit', 'Controllers\Hours@submit');
