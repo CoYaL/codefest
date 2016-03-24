@@ -59,9 +59,12 @@ class Authentication extends Controller
             if(!$error){
                 Session::set('loggedin',true);
 				$userId = $this->model->getUserId($username)->user_id;
-				var_dump($userId);
+				$nameObj = $this->model->getFullName($username);
+				$fullName = (!empty($nameObj->middlename))
+					? $nameObj->firstname.' '.$nameObj->middlename.' '.$nameObj->lastname
+					: $nameObj->firstname.' '.$nameObj->lastname;
+				Session::set('fullName',$fullName);
                 Session::set('userID',$userId);
-
                 url::redirect('leave');
             }
             else{

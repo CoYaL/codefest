@@ -12,7 +12,7 @@
 
 <div class="panel panel-default col-md-12 ">
 	<div class="panel-body">
-		Werknemer: <?php echo $data['employeeName']; ?>
+		Werknemer: <?php echo \Helpers\Session::get('fullName'); ?>
 		<form id="registration" class="form-group" action="<?php echo DIR;?>hours/submit" method="POST">
 			<div class="form-group col-md-6">
 					<label for="projects">Project</label><select class="form-control" name="projectID" id="projects">
