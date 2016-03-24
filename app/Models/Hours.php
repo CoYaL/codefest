@@ -77,7 +77,7 @@ class Hours extends Model
             FROM employees as e 
             JOIN `leave`  as l 
               ON e.employee_id = l.employee_id
-            WHERE '%s' <= w.day AND '%s' >= w.day
+            WHERE '%s' <= l.start_date AND '%s' >= l.end_date
             AND e.user_id = '%s'
             AND reason = 'ziek'
         ", $startdate, $enddate, $user_id);
@@ -88,7 +88,7 @@ class Hours extends Model
             FROM employees as e 
             JOIN `leave` as l 
               ON e.employee_id = l.employee_id
-            WHERE '%s' <= w.day AND '%s' >= w.day
+            WHERE '%s' <= l.start_date AND '%s' >= l.end_date
             AND e.user_id = '%s'
             AND reason = 'vakantie'
         ", $startdate, $enddate, $user_id);
