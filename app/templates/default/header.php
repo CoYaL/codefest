@@ -54,7 +54,7 @@ $hooks->run('afterBody');
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div class="container">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav <?php if(\Helpers\Session::get('role') === null) echo 'hidden';?>">
                     <li <?php
                     switch(\Helpers\Session::get('role')){
                         case 1:
@@ -122,7 +122,7 @@ $hooks->run('afterBody');
 
                     }?>><a href="/holidays">Feestdagen</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right <?php if(\Helpers\Session::get('role') === null) echo 'hidden';?>">
                     <li><a href="/authentication/logout">Uitloggen</a></li>
                 </ul>
             </div>
