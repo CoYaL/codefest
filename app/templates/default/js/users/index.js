@@ -8,7 +8,7 @@
         var html = $("script#template-user-record").html();
         $.each(users, function (index, user) {
             var template = html.replace(/\{\{ID\}\}/g, user.user_id || 0);
-            template = template.replace(/\{\{NAME\}\}/g, "{0} {1} {2}".format(user.firstname, user.middlename, user.lastname));
+            template = template.replace(/\{\{NAME\}\}/g, "{0} {1} {2}".format(user.firstname, user.middlename || "", user.lastname));
             template = template.replace(/\{\{EMAIL\}\}/g, user.email || "");
             template = template.replace(/\{\{BIRTHDATE\}\}/g, user.date_of_birth || "");
             template = template.replace(/\{\{ROLE\}\}/g, user.role || "")
